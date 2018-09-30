@@ -1,0 +1,97 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt,a4paper]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+\usepackage[numbers, sort&compress]{natbib}
+%\usepackage[square]{natbib}
+%\usepackage{scicite}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+\geometry{a4paper,scale=0.8}
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 20cm 
+\textheight 21cm
+\footskip 1.0cm
+\geometry{top=1.5cm}
+%The next command sets up an environment for the abstract to your paper.
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+\renewcommand\refname{References and Notes}
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Introduction to Statistical Data Science} 
+
+%\author{Jiafeng Shou} 
+\time 0
+\begin{document} 
+% Double-space the manuscript.
+
+\baselineskip24pt
+% Make the title.
+\maketitle 
+%\tableofcontents
+
+\section{Lecture 1}
+\begin{eqnarray}
+norm({\rm {\bf W}_i(\theta_j)})=\sqrt{x_1^2+x_2^2+\ldots+x_n^2}\\
+{\rm {\bf \bar W}_i(\theta_j)} = \frac{\rm {\bf W}_i(\theta_j)}{norm({\rm {\bf W}_i(\theta_j)})}
+\end{eqnarray}
+$$\int_{2}^{3}x^2dx$$
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
