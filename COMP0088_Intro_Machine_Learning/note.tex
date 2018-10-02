@@ -1,0 +1,187 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt,a4paper]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+\usepackage[numbers, sort&compress]{natbib}
+%\usepackage[square]{natbib}
+%\usepackage{scicite}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{amsmath}
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+\geometry{a4paper,scale=0.8}
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 20cm 
+\textheight 21cm
+\footskip 1.0cm
+\geometry{top=1.5cm}
+%The next command sets up an environment for the abstract to your paper.
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+\renewcommand\refname{References and Notes}
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Introduction to Machine Learning} 
+
+%\author{Jiafeng Shou} 
+\time 0
+\begin{document} 
+% Double-space the manuscript.
+
+\baselineskip24pt
+% Make the title.
+\maketitle 
+%\tableofcontents
+
+\section{Lecture 1}
+% \begin{eqnarray}
+% norm({\rm {\bf W}_i(\theta_j)})=\sqrt{x_1^2+x_2^2+\ldots+x_n^2}\\
+% {\rm {\bf \bar W}_i(\theta_j)} = \frac{\rm {\bf W}_i(\theta_j)}{norm({\rm {\bf W}_i(\theta_j)})}
+% \end{eqnarray}
+%$$\int_{2}^{3}x^2dx$$
+\subsection*{linear function}
+$$
+y = f_{\bf W}({\bf X})=f({\bf X,W})={\bf W^{\rm T}X}
+$$
+\subsubsection*{linear classifier (perception model)}
+$$
+{\bf x}_i \cdot {\bf w}+b \geq 0
+$$
+$$
+{\bf x}_i \cdot {\bf w}+b < 0
+$$
+\subsubsection*{linear regression in 1 dimension}
+$$
+y^i = {\bf W}^{\rm T}{\bf X}^i+\epsilon^i
+$$
+where $\epsilon$ is the noise(loss).\\
+Loss function: sum of squared errors
+$$
+L({\bf W}) = \sum_{i=1}^{N}(\epsilon^i)
+^2$$
+$$
+L(w_0,w_1) = \sum_{i=1}^{N}
+$$
+%\nabla
+$$
+\frac{\partial L(w_0,w_1)}{\partial w_0} = \sum_{i=1}^{N} \frac{\partial[y^i-(w_0x_0^i+w_1x_1^i)]^2}{\partial w_0} = -2\sum_{i=1}^{N}(y^i-(w_0x_0^i+w_1x_1^i))x_0^i = 0
+$$
+$$
+\sum_{i=1}^{N}y^ix^i_0 = w_0\sum_{i=1}^{N}x_0^ix_0^i+w_1\sum_{i=1}^{N}x_1^ix_0^i
+$$
+as follow, the partial gradient of $w_1$ would be 
+$$
+\sum_{i=1}^{N}y^ix^i_1 = w_0\sum_{i=1}^{N}x_0^ix_1^i+w_1\sum_{i=1}^{N}x_1^ix_1^i
+$$
+Therefore
+\begin{equation}
+\left[
+\begin{matrix}
+\sum_{i=1}^{N}y^ix_0^i \\
+\sum_{i=1}^{N}y^ix_1^i \\
+\end{matrix}
+\right]=
+\left[
+\begin{matrix}
+\sum_{i=1}^{N}x^i_0x_0^i & \sum_{i=1}^{N}x_0^ix_1^i \\
+\sum_{i=1}^{N}x_0^ix_1^i & \sum_{i=1}^{N}x_1^ix_1^i \\
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+w_0 \\
+w_1 \\
+\end{matrix}
+\right]
+\end{equation}
+Formally, it could conclude that
+$$
+{\bf X}^{\rm T}{\bf y} = {\bf X}^{\rm T}{\bf X}{\bf w}
+$$
+$$
+{\bf w} = ({\bf X}^{\rm T}{\bf X})^{-1}{\bf X}^{\rm T}{\bf y}
+$$
+\subsubsection*{Why the gradient could be equal to 0}
+Hessian matrix is a square matrix of second-order partial derivatives of scalar-valued function, or scalar field.
+\begin{equation}
+{\bf H}(f) = \left[
+\begin{matrix}
+\frac{\partial^2f}{\partial x_1^2} & \frac{\partial^2f}{\partial x_1 \partial x_2} & \ldots & \frac{\partial^2f}{\partial x_1 \partial x_n}\\
+\frac{\partial^2f}{\partial x_2 \partial x_1} & \frac{\partial^2f}{\partial x_2^2} & \ldots & \frac{\partial^2f}{\partial x_2 \partial x_n}\\
+\vdots & \vdots & \ddots & \vdots\\
+\frac{\partial^2f}{\partial x_n \partial x_1} & \frac{\partial^2f}{\partial x_n \partial x_2} & \ldots & \frac{\partial^2f}{\partial x_n^2}\\
+\end{matrix}
+\right]
+\end{equation}
+$$
+{\bf H} = \left|
+\begin{matrix}
+\frac{\partial^2f}{\partial x^2} & \frac{\partial^2f}{\partial x \partial y}\\
+ \frac{\partial^2f}{\partial y \partial x} & \frac{\partial^2f}{\partial x^2}\\
+\end{matrix}
+\right|
+$$
+In the 2 dimension, when ${\bf H}>0$: if $\frac{\partial^2f}{\partial x^2}>0$, then point$(x_0,y_0)$ is the local min point. If $\frac{\partial^2f}{\partial x^2}<0$, then point$(x_0,y_0)$ is the local max point.\\
+when ${\bf H}<0$, then point$(x_0,y_0)$ is the  stationary point.\\
+when ${\bf H}=0$, second order cannot decide the point property, then consider it in higher order Taylor's Expansion.\\
+In the example,${\bf H} = 4(x_0^i)^2(x_1^i)^2-4(x_1^ix_0^i)(x_0^ix_1^i)=0$, and $\frac{\partial^2f}{\partial x^2}=4(x_0^i)^2(x_1^i)^2>0$. Therefore, it is a local min point for the loss function.
+\\
+In higher dimension space (multi-variables), ${\bf H}(f)$ should be a positive definite matrix($(\nabla {\bf x})^{\rm T}{\bf H}(f)\nabla {\bf x}\geq 0$ for any $\nabla {\bf x}$).
+\subsubsection*{Generalized linear regression}
+$$
+L({\bf w}) = \sum_{i=1}^{N}(y^i-{\bf w}^{\rm T}\phi({\rm x}^i))^{\rm T}
+$$
+where $\phi({\bf x}^i)$ is a polynomial function for ${\bf x}^i$
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

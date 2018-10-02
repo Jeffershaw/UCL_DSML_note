@@ -53,7 +53,7 @@
 
 % Include your paper's title here
 
-\title{Introduction to Statistical Data Science} 
+\title{Machine Vision} 
 
 %\author{Jiafeng Shou} 
 \time 0
@@ -72,49 +72,7 @@
 % \end{eqnarray}
 %$$\int_{2}^{3}x^2dx$$
 
-\subsection{Normal Distribution}
-$$
-p(x) = \frac{1}{\sqrt{2\pi\sigma^2}}exp{(-\frac{(x-u)^2}{2\sigma^2})}
-$$
 
-$$
-F(x)\equiv P(X\leq x)
-$$
-\\
-{\bf{Central Limit Theorem (for normal distribution)}}\\
-The more random variables we average over, the closer the resulting
-distribution will be to the Normal distribution
-\\
-{\bf Parameter: $u$}
-The mean is the location parameter.\\
-{\bf Parameter: $\sigma^2$}
-The variance is the scale parameter\\
-
-\subsection{Uniform Distribution}
-\begin{eqnarray}
-X \sim U[0,1] \\
-0\leq x \leq 1\\
-p(x) = 1 \\
-F(x) = P(X\leq X)=x\\
-\end{eqnarray}
-{\bf Use uniform distribution to construct normal distribution}\\
-\begin{equation}
-{\bf X} = \left[
-\begin{array}{c}
-X^{(1)} \\
-X^{(2)} \\
-\ldots \\
-X^{(n)} \\
-\end{array}
-\right]
-\end{equation}
-$$
-X^{(i)} \sim U[0,1]
-$$
-$$
-Y = \frac{1}{n}\sum_{i=1}^{n}X^{(i)}
-$$\\
-subsampling $\bf X$ vector to construct $Y$. The distribution of $Y_j \sim ?, j=1,2,3,\ldots,p$ would close to normal distribution.
 \end{document}
 
 

@@ -14,7 +14,7 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{titlesec}
-
+\usepackage{amsmath}
 % Use times if you have the font installed; otherwise, comment out the
 % following line.
 
@@ -103,9 +103,24 @@ $$
 $$
 f(x;\alpha,\beta) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
 $$
-\subsection*{Conjugate priors}
+\subsection*{Conjugate priors (why it is easy to convert the posterior)}
 Definition: In Bayesian probability theory, if the posterior distributions $p(\theta | x)$ are in the same probability distribution family as the prior probability distribution $p(\theta)$, the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function
 %to finish the formula part
+\subsubsection*{exponential family likelihood (including Binomial, Normal, Gamma distribution)}
+$$
+P(x|\theta) = g(\theta)f(x)e^{\phi(\theta)^{\rm T}{\bf T}(x)}
+$$
+where $g(\theta)$ is the normalizing constant.\\
+$$
+P(\{x_i\}|\theta) = \prod_{i}P(x_i|\theta) = g(\theta)^ne^{\phi(\theta)^{\rm T}(\sum_{i}{\bf T}(x_i))}
+\prod_{i}f(x_i)$$
+If the prior takes the conjugate form.
+$$P(\theta) = F(\tau,\nu)g(\theta)^{\nu}e^{\phi(\theta)^{\rm T}\tau}$$
+with $F(\tau,\nu)$ the normalizer, then posterior is
+$$
+P(\theta|\{x_i\}) \propto P(\{x_i\}|\theta)P(\theta) \propto g(\theta)^{\nu+n}e^{\phi(\theta)^{\rm T}(\tau+\sum_{i}{\bf T}(x_i))}
+$$
+where $F(\tau+\sum_i{\bf T}(x_i),\nu+n)$ is the normalizer.
 \end{document}
 
 
