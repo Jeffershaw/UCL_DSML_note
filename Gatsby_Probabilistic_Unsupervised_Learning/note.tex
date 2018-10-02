@@ -1,0 +1,129 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt,a4paper]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+\usepackage[numbers, sort&compress]{natbib}
+%\usepackage[square]{natbib}
+%\usepackage{scicite}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+\geometry{a4paper,scale=0.8}
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 20cm 
+\textheight 21cm
+\footskip 1.0cm
+\geometry{top=1.5cm}
+%The next command sets up an environment for the abstract to your paper.
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+\renewcommand\refname{References and Notes}
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Probabilistic \& Unsupervised Learning} 
+
+%\author{Jiafeng Shou} 
+\time 0
+\begin{document} 
+% Double-space the manuscript.
+
+\baselineskip24pt
+% Make the title.
+\maketitle 
+%\tableofcontents
+
+\section{Lecture 1}
+% \begin{eqnarray}
+% norm({\rm {\bf W}_i(\theta_j)})=\sqrt{x_1^2+x_2^2+\ldots+x_n^2}\\
+% {\rm {\bf \bar W}_i(\theta_j)} = \frac{\rm {\bf W}_i(\theta_j)}{norm({\rm {\bf W}_i(\theta_j)})}
+% \end{eqnarray}
+%$$\int_{2}^{3}x^2dx$$
+
+\subsection{A probabilistic approach}
+$P(x|\theta)$ is the generative model.\\
+$P(y|x,\theta)$ is the likelihood.
+\subsection{Bayesian learning}
+Data: $D = {x_1,\ldots,x_n}$\\
+Model: $M_1,M_2,$ etc \\
+Parameters: $\theta_i$ (per model)\\
+Prior probability of models: $P(M_i)$\\
+Prior Probability of model parameters: $P(\theta_i|M_i)$\\
+Model of data given parameters (likelihood model): $P(x|\theta_i,M_i)$
+\subsubsection*{Data probability (likelihood)}
+$$P(D|\theta_i,M_i) = \prod_{j=1}^{n}P(x_j|\theta,M_i)\equiv \iota(\theta_i)$$   %cannot find the symbol, fix later \\
+\subsubsection*{Parameter learning (posterior (based on the condition))}
+$$
+P(\theta|D,M_i) = \frac{P(D|\theta_i,M_i)P(\theta|M_i)}{P(D|M_i)}
+$$
+$$
+P(D|M_i) = \int{P(D,\theta_i|M_i)}d\theta_i = \int{P(D|\theta_i,M_i)P(\theta_i|M_i)}d\theta_i
+$$
+$P(D|M_i)$ is called the marginal likelihood or evidence for $M_i$. In the second formula, it needs to transform into the form of joint distribution function integration at first.
+\subsubsection*{model selection}
+$$
+P(M_i|D) = \frac{P(D|M_i)P(M_i)}{P(D)}
+$$
+\subsection*{Beta distribution}
+$$
+B(x,y) = \int_0^1{t^{x-1}(1-t)^{y-1}}dt
+$$
+$$
+f(x;\alpha,\beta) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}
+$$
+\subsection*{Conjugate priors}
+Definition: In Bayesian probability theory, if the posterior distributions $p(\theta | x)$ are in the same probability distribution family as the prior probability distribution $p(\theta)$, the prior and posterior are then called conjugate distributions, and the prior is called a conjugate prior for the likelihood function
+%to finish the formula part
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
