@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1538523545 "note.tex" "note.pdf" "note" 1538523546
+["pdflatex"] 1538582472 "note.tex" "note.pdf" "note" 1538582473
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -62,6 +62,7 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty" 1480098820 2431 fe3078ec12fc30287f568596f8e0b948 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls" 1480098821 19821 310da678527a7dfe2a02c88af38079b7 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo" 1480098821 8303 1d67e16498f00f63da792fab169302fc ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/eqnarray/eqnarray.sty" 1480098827 4712 f2b05f0bbf401a02db051595b41cdc5f ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty" 1480098829 40502 e003406220954b0716679d7928aedd8a ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def" 1485129666 58250 3792a9d2d1d664ee8c742498e295b051 ""
@@ -77,13 +78,14 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1480098837 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/times.sty" 1480098837 857 6c716f26c5eadfb81029fcd6ce2d45e6 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/titlesec/titlesec.sty" 1480098841 37387 afa86533e532701faf233f3f592c61e0 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty" 1485129666 12396 d41f82b039f900e95f351e54ae740f31 ""
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1520350859 4129591 1308c0a7aa71fdcfb403e0eb5dc666f5 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "note.aux" 1538523545 79 c6564365f6839d56d13591c9384028df ""
-  "note.tex" 1538523544 5518 29a74ba9bf578928c614b65c1ac0877c ""
+  "note.aux" 1538582473 79 c6564365f6839d56d13591c9384028df ""
+  "note.tex" 1538576209 6606 57ffe09468b45bd25ca081f54ab55864 ""
   (generated)
-  "note.log"
-  "note.pdf"
   "note.aux"
+  "note.pdf"
+  "note.log"

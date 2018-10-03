@@ -15,6 +15,7 @@
 \usepackage{geometry}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{eqnarray}
 % Use times if you have the font installed; otherwise, comment out the
 % following line.
 
@@ -165,6 +166,32 @@ $$
 L({\bf w}) = \sum_{i=1}^{N}(y^i-{\bf w}^{\rm T}\phi({\rm x}^i))^{\rm T}
 $$
 where $\phi({\bf x}^i)$ is a polynomial function for ${\bf x}^i$
+\subsubsection*{normalization}
+L1 norm(euclidean) norm:
+$$
+||{\bf w}||_2 = \sqrt{\sum_{d=1}^{D}w_d^2}=\sqrt{<{\bf w},{\bf w}>}
+$$\\
+L2 norm(manhattan) norm:
+$$
+||{\bf w}||_1 = \sum_{d=1}^{D}|w_d|
+$$\\
+Lp norm, $p>1$:
+$$
+||{\bf w}||_p =(\sum_{d=1}^{D}w^p_d)^{\frac{1}{p}} 
+$$
+\subsection*{Ridge regression: L2-regularized linear regression}
+\begin{eqnarray*}
+L({\bf w}) &=& {\bf \epsilon}^{\rm T}{\bf \epsilon}+\lambda{\bf w}^{\rm T}{\bf w}={\bf y}^{\rm T}{\bf y}-2{\bf y}^{\rm T}{\bf X}{\bf w}+{\bf w}^{\rm T}({\bf X}^{\rm T}{\bf X}+\lambda{\bf I}){\bf w} \\
+\nabla L({\bf w}^*) &=& 0 \\
+{\bf w}^* &=& ({\bf X}^{\rm T}{\bf X}+\lambda{\bf I})^{-1}{\bf X}^{\rm T}{\bf y}
+\end{eqnarray*}
+In some case, the matrix cannot be inversed, then add $\lambda {\bf I}$ to make it invertible..\\
+invertible matrix
+\subsection*{Lasso regression: L1-regularized linear regression}
+%\nabla L({\bf w}^*) = 0
+suitable for small sample, large dimension.\\
+It could shrink some coefficient into 0, helpful for feature selection.\\
+The optimization would be gradient descent, LARS, PGD.
 \end{document}
 
 
