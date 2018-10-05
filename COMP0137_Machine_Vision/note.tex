@@ -71,6 +71,27 @@
 % {\rm {\bf \bar W}_i(\theta_j)} = \frac{\rm {\bf W}_i(\theta_j)}{norm({\rm {\bf W}_i(\theta_j)})}
 % \end{eqnarray}
 %$$\int_{2}^{3}x^2dx$$
+\subsection*{Bernoulli Distribution}
+
+$$
+Pr(x) = {\lambda}^x(1-\lambda)^{1-x}, \lambda \in =[0,1], x\in\{0,1\}
+$$
+$$
+Pr(x) = Bern_x[\lambda]
+$$
+\subsection*{Beta Distribution}
+$$
+Pr(\lambda) = \frac{\Gamma[\alpha+\beta]}{\Gamma[\alpha]\Gamma[\beta]}\lambda^{\alpha-1}(1-\lambda)^{\beta-1},\alpha,\beta>0
+$$
+$$
+\Gamma(z) = \int_{0}^{\infty}t^{z-1}c^{-t}dt=(z-1)!
+$$
+$$
+E[\lambda] = \frac{\alpha}{\alpha+\beta}
+$$
+$\alpha,\beta$ decide the coin fact $\lambda$
+
+
 
 
 \end{document}
