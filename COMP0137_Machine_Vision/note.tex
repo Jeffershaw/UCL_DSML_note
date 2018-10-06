@@ -90,8 +90,45 @@ $$
 E[\lambda] = \frac{\alpha}{\alpha+\beta}
 $$
 $\alpha,\beta$ decide the coin fact $\lambda$
-
-
+\subsection*{Categorical Distribution}
+$$
+Pr(x=k)=\lambda_k
+$$
+$$
+Pr(x) = Cat_x[{\bf \lambda}]
+$$
+\subsection*{Dirichlet Distribution}
+$$
+Pr(\lambda_1\ldots\lambda_K) = \frac{\Gamma[\sum_{k=1}^{K}]\alpha_k}{\prod_{k=1}^{K}\Gamma[\alpha_k]}\prod_{k=1}^{K}\lambda_k^{\alpha_k-1}
+$$
+$$
+Pr(\lambda_1\ldots\lambda_K) = {\rm Dir}_{\lambda_1\ldots\lambda_K}[\alpha_1,\alpha_2\ldots,\alpha_K]
+$$
+\subsection*{Univariate Normal Distribution}
+$$
+Pr(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp[-0.5(x-\mu)^2/\sigma^2]
+$$
+$$
+Pr(x) = {\rm Norm}_x[\mu,\sigma^2]
+$$
+\subsection*{Normal Inverse Gamma Distribution}
+$$
+Pr(\mu,\sigma^2) = \frac{\sqrt{\gamma}\beta^{\alpha}}{\sigma\sqrt{2\pi}\Gamma[\alpha]}(\frac{1}{\sigma^2})^{\alpha+1}\exp[-\frac{2\beta+\gamma(\delta-\mu)^2}{2\sigma^2}]
+$$
+$$
+Pr(\mu,\sigma^2) = {\rm NormInvGam}_{\mu,\sigma^2}[\alpha,\beta,\gamma,\delta]
+$$
+\subsection*{Multivariate Normal Distribution}
+$$
+Pr({\bf x})=\frac{1}{(2\pi)^{D/2}|\sum|^{1/2}}\exp[-0.5({\bf x- \mu})^T{\sum}^-1(\bf x-\mu)]
+$$
+\subsection*{Normal Inverse Wishart}
+$$
+Pr(\mu,\Sigma) = \frac{\gamma^{D/2}|\Psi|^{\alpha/2}|\Sigma|^{-\frac{\alpha+D+2}{2}}}{(2\pi)^{D/2}2^{\frac{\alpha D}{2}}\Gamma_D(\frac{\alpha}{2})}\exp\{-\frac{1}{2}(Tr(\Psi\Sigma^{-1}))+\gamma(\mu-\delta)^T\Sigma^{-1}(\mu-\delta)\}
+$$
+\subsection*{Conjugate Distribution and Conjugate prior}
+Conjugate Distribution is between prior and posterior\\
+Prior is the conjugate prior of the likelihood function.
 
 
 \end{document}
