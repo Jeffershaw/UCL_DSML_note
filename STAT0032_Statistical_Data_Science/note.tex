@@ -123,6 +123,34 @@ $$
 $$
 E(X)=V(X)=\lambda
 $$
+
+\subsection{empirical CDF}
+$$
+F_n(x)=\frac{1}{n}\sum_{i=1}^{n}I(x^{(i)}\leq x)
+$$
+quantile is simply the inverse of the CDF:
+	-The 0.9 quantile is the value of $x$ such that $F(x)=0.9$ i.e. $x=F^{-1}(0.9)$
+\section{Hypothesis}
+\subsection*{null hypothesis}
+In inferential statistics, the null hypothesis is a general statement or default position that there is no relationship between two measured phenomena, or no association among groups.
+\subsection*{p-value}
+The probability of obtaining results as or more extreme than that observed, assuming $H_0$ is true, is the p-value, under the assumption that the null hypothesis.
+$$
+p\equiv P(X\leq 15;H_0)
+$$
+$$
+p=\sum_{x=0}^{15}\bigl(\begin{smallmatrix}40\\x\end{smallmatrix}\bigr)0.5^x(1-0.5)^{(40-x)}
+$$
+The p-value is most certainly not the probability of $H_0$ being true \\
+When used in practice with a threshold of 0.05 this is an informal
+method of reasoning and can be easily criticized\\
+\subsection*{Statistical power}
+The power of a hypothesis test is the probability of avoiding a false
+negative
+\subsection*{P-value distribution (CDF)}
+$$
+P(F(X)\leq z) = P(F^{-1}(F(x))\leq F^{-1}(z)) = P(X\leq F^{-1}(z))=F(F^{-1}(z))=z
+$$
 \end{document}
 
 

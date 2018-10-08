@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1538833176 "note.tex" "note.pdf" "note" 1538833176
+["pdflatex"] 1539008730 "note.tex" "note.pdf" "note" 1539012439
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -32,6 +32,7 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1480098733 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1480098733 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1480098746 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1480098746 46026 6dab18b61c907687b520c72847215a68 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf" 1480098758 1372 788387fea833ef5963f4c5bffe33eb89 ""
@@ -77,10 +78,10 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1520350859 4129591 1308c0a7aa71fdcfb403e0eb5dc666f5 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "note.aux" 1538833176 252 d28f51206b25729bc1321bdb3f189c95 ""
-  "note.tex" 1538520865 3137 42daa005474b6881547b201e5c7c6160 ""
+  "note.aux" 1539008731 491 201ad86a196c2915aac4d5df5f382a1f ""
+  "note.tex" 1539008730 4417 05e61fb83b5b807101da513b44fd2c60 ""
   (generated)
+  "note.toc"
+  "note.log"
   "note.pdf"
   "note.aux"
-  "note.log"
-  "note.toc"
