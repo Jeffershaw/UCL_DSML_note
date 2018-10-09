@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.6)  9 OCT 2018 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.6)  10 OCT 2018 00:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -286,7 +286,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (21.61682pt too wide) in paragraph at lines 156--164
+Overfull \hbox (21.61682pt too wide) in paragraph at lines 157--165
 \OT1/ptm/m/n/12 In higher di-men-sion space (multi-variables), $\OT1/cmr/bx/n/1
 2 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 )$ \OT1/ptm/m/n/12 should
  be a pos-i-tive def-i-nite matrix($\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 r\OT1/cmr
@@ -315,12 +315,13 @@ b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on note.pdf (4 pages, 126317 bytes).
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on note.pdf (4 pages, 132257 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

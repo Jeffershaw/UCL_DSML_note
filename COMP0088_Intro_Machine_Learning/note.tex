@@ -134,6 +134,7 @@ $$
 $$
 {\bf w} = ({\bf X}^{\rm T}{\bf X})^{-1}{\bf X}^{\rm T}{\bf y}
 $$
+Here still need to add the trace version( more generalized version)
 \subsubsection*{Why the gradient could be equal to 0}
 Hessian matrix is a square matrix of second-order partial derivatives of scalar-valued function, or scalar field.
 \begin{equation}
@@ -194,7 +195,17 @@ It could shrink some coefficient into 0, helpful for feature selection.\\
 The optimization would be gradient descent, LARS, PGD.
 
 \subsection*{Logistic regression}
-what if y !=0,1, y=1,-1
+sigmoid function:
+$$
+\sigma(x)=\frac{1}{1+\exp(-x)}
+$$
+Given training set:$\{({\bf x}^1,y^1),\ldots,({\bf x}^N,y^N)\},{\bf x} \in \mathbb{R}^D, y\in\{0,1\}$
+The ML function would be:
+\begin{eqnarray*}
+p(y^1,\ldots,y^n|{\bf x}^1,\ldots,{\bf x}^N) &=& \prod_{i=1}^{N}P(y^i|{\bf x}^i)\\
+&=& \prod_{i=1}^{N}\sigma({\bf w}^T{\bf x}^i)^{y^i}(1-\sigma({\bf w}^T{\bf x}^i))^{1-y^i}\\
+logP({\bf y|X;w}) &=& \sum_{i=1}^{N}y^ilog\sigma({\bf w}^T{\bf x}^i)+(1-y^i)log(1-\sigma({\bf w}^T{\bf x}^i)) 
+\end{eqnarray*}
 \end{document}
 
 
