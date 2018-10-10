@@ -135,6 +135,12 @@ $$
 {\bf w} = ({\bf X}^{\rm T}{\bf X})^{-1}{\bf X}^{\rm T}{\bf y}
 $$
 Here still need to add the trace version( more generalized version)
+\subsubsection*{Least squares solution, vector form}
+\begin{eqnarray*}
+L({\bf w})&=&({\bf y}-{\bf X}{\bf w})^t({\bf y}-{\bf X}{\bf w})\\
+1&=&2
+\end{eqnarray*}
+
 \subsubsection*{Why the gradient could be equal to 0}
 Hessian matrix is a square matrix of second-order partial derivatives of scalar-valued function, or scalar field.
 \begin{equation}
@@ -206,6 +212,7 @@ p(y^1,\ldots,y^n|{\bf x}^1,\ldots,{\bf x}^N) &=& \prod_{i=1}^{N}P(y^i|{\bf x}^i)
 &=& \prod_{i=1}^{N}\sigma({\bf w}^T{\bf x}^i)^{y^i}(1-\sigma({\bf w}^T{\bf x}^i))^{1-y^i}\\
 logP({\bf y|X;w}) &=& \sum_{i=1}^{N}y^ilog\sigma({\bf w}^T{\bf x}^i)+(1-y^i)log(1-\sigma({\bf w}^T{\bf x}^i)) 
 \end{eqnarray*}
+quadratic loss is trying to close the distance, while logistic is trying to close the classification.
 \end{document}
 
 
