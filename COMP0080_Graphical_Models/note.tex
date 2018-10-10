@@ -96,9 +96,52 @@ Conditional independence does not imply marginal independence:
 $$
 p(x,y) = \sum_{z}p(x|z)p(y|z)p(z) \neq \sum_{z}p(x|z)p(z) \sum_{z}p(y|z)p(z)
 $$
-simpson paradox
+\section{Lecture 2}
+\subsection*{Graphs}
+{\large Definition:}\\
+A graph consists of nodes (vertixes) and undirected or directed links (edges) between nodes.\\
+{\large Path:}\\
+A path from $X_i$ to $X_j$ is a sequence of connected nodes starting at $X_i$ and ending at $X_j$. (no direction)\\
+{\large Directed Acyclic Graph:}\\
+Graph in which by following the direction of the arrows a node will \textbf{never} be visited \textbf{more than once}.\\
+{\large Parents and Children:}\\
+Xi is a parent of $X_j$ if there is a link from $X_i$ to $X_j$. Xi is a child of $X_j$ if there is a link from $X_j$ to $X_i$.\\
+{\large Ancestors and Descendants:}\\
+The ancestors of a node $X_i$ are the nodes with a directed path ending at $X_i$. The descendants of $X_i$ are the nodes with a directed path beginning at $X_i$.\\
+\subsection*{Undirected Graph:}
+{\large Clique:}\\
+A clique is a fully connected subset of nodes.\\
+{\large Maximal Clique:}\\
+Clique which is not a subset of a larger clique.\\
+{\large Connected graph:}\\
+There is a path between every pair of vertices.\\
+{\large Connected components:}\\
+In a non-connected graph, the connected components are the connected-subgraphs.\\
+{\large Connectedness: Singly-connected}\\
+There is only one path from any node $\alpha$ to another node $b$\\
+{\large Multiply-connected}\\
+A graph is multiply-connected if it is not singly connected.\\
 
-
+\subsection*{Belief Networks (Bayesian Networks)}
+A belief network is a \textbf{directed acyclic graph} in which each node is associated with the conditional probability of the node given its parents.
+\subsubsection*{Processing the network}
+Firstly write the whole joint distribution such as:
+$$
+p(A,R,E,B) = p(A|R,E,B)p(R|E,B)p(E|B)p(B)
+$$
+Then, according to the assumption, remove some independent variable from the joint distribution. \textbf{It does matter that the order of joint distribution influence the processing}.
+\subsubsection*{Uncertain Evidence}
+In soft/uncertain evidence the variable is in more than one state, with the strength of our belief about each state being given by probabilities. For example, if $y$ has the states $dom(y) =$ \{red, blue, green\} the vector $(0.6, 0.1, 0.3)$ could represent the probabilities of the respective states\\
+In the calculation, we can do this: Given $P(A=tr)=0.7$ 
+\begin{eqnarray*}
+p(B=tr|\widetilde{A}) = \sum_{A}p(B=tr|A)p(A|\widetilde{A}) 
+\end{eqnarray*}
+\subsubsection*{Independence}
+If $C$ has more than one incoming link, then $A\independent B$ and A is not conditional independent with B under C condition. In this case C is called collider.
+If C has at most one incoming link, then $A \independent B|C$ and A is not independent with B. In this case $C$ is called non-collider.
+\subsubsection*{d-connected/separated}
+\subsubsection*{Markov Equivalence}
+\subsubsection*{BN representation}
 \end{document}
 
 
