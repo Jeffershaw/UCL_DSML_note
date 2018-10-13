@@ -140,8 +140,18 @@ p(B=tr|\widetilde{A}) = \sum_{A}p(B=tr|A)p(A|\widetilde{A})
 If $C$ has more than one incoming link, then $A\independent B$ and A is not conditional independent with B under C condition. In this case C is called collider.
 If C has at most one incoming link, then $A \independent B|C$ and A is not independent with B. In this case $C$ is called non-collider.
 \subsubsection*{d-connected/separated}
+X and Y are ‘d-connected’ by Z if there is any path from X to Y that is not blocked by Z\\
+If all of the paths are blocked then we say X and Y are ‘d-separated’ by Z.
 \subsubsection*{Markov Equivalence}
+{\large skeleton}\\
+Formed from a graph by removing the arrows.\\
+{\large immorality}\\
+An immorality in a DAG is a configuration of three nodes, A,B,C such that C is a child of both A and B, with A and B not directly connected.\\
+{\large Markov Equivalence}\\
+Two graphs represent the same set of independence assumptions if and only if they have the same skeleton and the same set of immoralities.\\
 \subsubsection*{BN representation}
+BN cannot represent whatever independence statements are present in $p$.\\
+Fundamentally, the actual \textbf{numerical distribution $p$ contains much more information than a graph can represent}.
 \end{document}
 
 
