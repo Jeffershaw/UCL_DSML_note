@@ -135,8 +135,34 @@ Conjugate Distribution is between prior and posterior\\
 Prior is the conjugate prior of the likelihood function.
 \section{Fitting model}
 \subsection*{maximum likelihood}
+\subsubsection*{Fitting}
+\begin{eqnarray*}
+\hat{\theta} &=& argmax_{(\theta)}[Pr({\bf x_{1\ldots I}}|\theta)] \\
+&=& argmax_{(\theta)}[\prod_{i=1}^{I}Pr({\bf x_{i}}|\theta)]
+\end{eqnarray*}
+\subsubsection*{Predictive Density}
+Evaluate new data point $\bf x^*$ under probability distribution $Pr({\bf x^*}|\hat{\theta})$ with best parameter.
 \subsection*{maximum a posteriori}
+\subsubsection*{Fitting}
+\begin{eqnarray*}
+\hat{\theta} &=& argmax_{(\theta)}[Pr(\theta|{\bf x_{1\ldots I}})] \\
+&=& argmax_{(\theta)}\left[\frac{Pr({\bf x_{1\ldots I}}|\theta)Pr(\theta)}{Pr({\bf x_{1\ldots I}})}\right]\\
+&=& argmax_{(\theta)}\left[\frac{\prod_{i=1}^{I}Pr({\bf x_i}|\theta)Pr(\theta)}{Pr({\bf x_{1\ldots I}})}\right]\\
+\hat{\theta} &=& argmax_{(\theta)}\left[Pr({\bf x_i}|\theta)Pr(\theta)\right]
+\end{eqnarray*}
+\subsubsection*{Predictive}
+Evaluate new data point $\bf x^*$ under probability distribution $Pr({\bf x^*}|\hat{\theta})$ with best parameter.
 \subsection*{bayesian approach}
+\subsubsection*{Fitting}
+$$
+Pr(\theta|{\bf x_{1\ldots I}}) = \frac{(\prod_{i=1}^{I}Pr({\bf x_i}|\theta))Pr(\theta)}{Pr({\bf x_{1\ldots I}})}
+$$
+The difference between bayesian approach and MAP is that MAP takes the maximum value, while bayesian approach takes the distribution.
+\subsubsection*{Predictive}
+$$
+Pr({\bf x^*|{\bf x_{1\ldots I}}}) = \int Pr({\bf x^*|\theta})Pr(\theta|{\bf x_{1\ldots I}})d\theta
+$$
+Confusion: the formula should be $\int Pr({\bf x^*|\theta, x_{1\ldots I}})Pr(\theta|{\bf x_{1\ldots I}})d\theta$. Given the $\theta$, it considers ${\bf x_{1\ldots I}}$ and $x^*$ are independent. 
 \end{document}
 
 
