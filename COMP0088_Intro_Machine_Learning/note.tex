@@ -134,7 +134,22 @@ $$
 $$
 {\bf w} = ({\bf X}^{\rm T}{\bf X})^{-1}{\bf X}^{\rm T}{\bf y}
 $$
-Here still need to add the trace version( more generalized version)
+Here still need to add the trace version( more generalized version):
+\begin{eqnarray*}
+\bf \hat{Y} &=& \bf Xw \\
+Loss &=& (\bf Y-Xw)^2\\
+ &=& \bf (Y-Xw)^T(Y-Xw)\\
+ &=& \bf Y^TY-w^TX^TY-Y^TXw+w^TX^TXw\\
+Tr[\frac{\partial}{\partial{\bf w}} Loss] &=& \bf -X^TY-X^TY+X^TXw+X^TXw \\
+&=& 0 \\
+\bf w&=& (X^TX)^{-1}X^TY
+\end{eqnarray*}
+Due to the matrix derivatives:
+\begin{eqnarray*}
+\rm Tr[ABC]&=& \rm Tr[CAB]\\
+\rm \frac{\partial}{\partial A}Tr[A^TB] &=& B\\
+\rm \frac{\partial}{\partial A}Tr[A^TBAC] &=& BAC+B^TAC^T
+\end{eqnarray*}
 \subsubsection*{Least squares solution, vector form}
 \begin{eqnarray*}
 L({\bf w})&=&({\bf y}-{\bf X}{\bf w})^t({\bf y}-{\bf X}{\bf w})\\
@@ -213,6 +228,66 @@ p(y^1,\ldots,y^n|{\bf x}^1,\ldots,{\bf x}^N) &=& \prod_{i=1}^{N}P(y^i|{\bf x}^i)
 logP({\bf y|X;w}) &=& \sum_{i=1}^{N}y^ilog\sigma({\bf w}^T{\bf x}^i)+(1-y^i)log(1-\sigma({\bf w}^T{\bf x}^i)) 
 \end{eqnarray*}
 quadratic loss is trying to close the distance, while logistic is trying to close the classification.
+\subsubsection*{multiple classes}
+Softmax function:
+$$
+P(y=c|{\bf x;W}) = \frac{\exp({\bf w}^T_c{\bf x})}{\sum_{c'=1}^{C}\exp({\bf w}^T_{c'}{\bf x})} = g_c({\bf x,W})
+$$
+Likelihood function of training sample: $({\bf y}^i,{\bf x}^i)$
+$$
+P({\bf y}^i|{\bf x}^i;{\bf w}) = \prod_{c=1}^{C}(g_c({\bf x, W}))^{{\bf y}_c^i}
+$$
+Optimization criterion:
+$$
+L({\bf W}) = -\sum_{i=1}^{N}\sum_{c=1}^{C}{\bf y}^i_c\log(g_c({\bf x,W}))
+$$
+\subsubsection*{Mapping data to higher-dimensional space}
+while the data cannot be linear detected, the method is mapping the data to higher-dimensional space.
+$$
+L({\bf W'}) = -\sum_{i=1}^{N}\sum_{c=1}^{C}{\bf y}^i_c\log(g_c({\bf \phi(x),W}))
+$$
+\subsubsection*{Optimization to loss function}
+{\large Gradient-based optimization}\\
+\begin{eqnarray*}
+\frac{\partial L({\bf w})}{\partial w_k} &=& -\sum_{i=1}^{N} \left[y^i\frac{1}{g({\bf w}^T{\bf x}^i)}\frac{\partial g({\bf w}^T{\bf x}^i)}{\partial w_k}+(1-y^i)\frac{1}{1-g({\bf w}^T{\bf x}^i)}(-\frac{\partial g({\bf w}^T{\bf x}^i)}{\partial w_k})\right]\\
+&=& -\sum_{i=1}^{N}[y^i-g({\bf w}^T{\bf x}^i)]{\bf x}^i_k 
+\end{eqnarray*}
+This is for the non-linear system of binary classification.\\
+\begin{eqnarray*}
+&\nabla f({\bf x}) = \left[\begin{matrix}
+\frac{\partial f}{\partial x_1}\\
+\frac{\partial f}{\partial x_2}
+\end{matrix}\right] \\
+&Initial: \bf x_0 \\
+&Update: {\bf x}_{i+1} = {\bf x}_i-\alpha\nabla f({\bf x_i}) \\
+\end{eqnarray*}
+It always works for \textbf{convex function}. But it is hard to set $\alpha$.
+\large{second-order methods (newton method)}
+First order Taylor series approximation:
+$$
+f(x) \approx f(a)+(x-a)f'(a)+e(x)
+$$
+Second order Taylor series approximation:
+\begin{eqnarray*}
+f(x) &=& f(a)+(x-a)f'(a)+\frac{1}{2}(x-a)^2f''(a)+e(x)\\
+q'(x)&=&f'(x_i)+(x-x_i)f''(x_i) = 0\\
+x_{i+1}&=&x_i-\frac{f'(x_i)}{f''(x_i)}
+\end{eqnarray*}
+{\large For the higher dimension}\\
+\begin{eqnarray*}
+f({\bf x}) &=& f({\bf x}_i)+({\bf x}-{\bf x}_i)\nabla f({\bf x}_i)+\frac{1}{2}({\bf x}-{\bf x}_i)^T{\bf H}({\bf x}-{\bf x}_i)\\
+{\bf H_{i,j}} &=& \frac{\partial^2 f}{\partial x_i \partial x_j} \\
+\nabla q(\bf x) &=& 0 \\
+\nabla f({\bf x}_i)+({\bf x}-{\bf x}_i)^T{\bf H(x_i)} &=& 0 \\
+{\bf x}_{i+1} &=& {\bf x}_i-({\bf H(x_i)})^{-1}\nabla f({\bf x}_i)
+\end{eqnarray*}
+Here is the hessian matrix for logistic loss function:
+\begin{eqnarray*}
+\frac{\partial^2 L({\bf w})}{\partial_{w_k}\partial_{w_j}} &=& \frac{\partial(-\sum_{i=1}^{N}[y^i-g({\bf w}^T{\bf x}^i)]{\bf x}^i_k )}{\partial w_j}\\
+&=& \sum_{i=1}^{N}{\bf x}^i_k\frac{\partial g({\bf w}^T{\bf x}^i)}{\partial w_j}\\
+&=& \sum_{i=1}^{N}{\bf x}^i_kg({\bf w}^T{\bf x}^i)(1-g({\bf w}^T{\bf x}^i)){\bf x}^i_j
+\end{eqnarray*}
+
 \end{document}
 
 

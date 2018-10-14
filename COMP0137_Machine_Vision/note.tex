@@ -163,6 +163,48 @@ $$
 Pr({\bf x^*|{\bf x_{1\ldots I}}}) = \int Pr({\bf x^*|\theta})Pr(\theta|{\bf x_{1\ldots I}})d\theta
 $$
 Confusion: the formula should be $\int Pr({\bf x^*|\theta, x_{1\ldots I}})Pr(\theta|{\bf x_{1\ldots I}})d\theta$. Given the $\theta$, it considers ${\bf x_{1\ldots I}}$ and $x^*$ are independent. 
+\subsection*{Multivariate Normal Distribution}
+If ${\bf x_1, x_2\ldots x_n}$ are independent, the covariance matrix would be 
+$$
+\Sigma = \left[\begin{matrix} 
+\sigma_1^2 & 0 & \ldots & 0\\
+0 & \sigma_2^2 & \ldots & 0\\
+\vdots & \vdots & \ddots & 0 \\
+0 & 0 & \ldots & \sigma_n^2
+\end{matrix}
+\right]
+$$
+Therefore, while ${\bf x_1, x_2\ldots x_n}$ are dependent, the covariance matrix could be decomposed into rotation matrix and diagonal:
+$$
+\Sigma_{full} = {\bf R}^T\Sigma_{diag}'{\bf R}
+$$
+\subsubsection*{Marginal Distribution}
+$$
+u_i = u_i
+$$$$
+\Sigma_i= \Sigma_{ii} 
+$$
+\subsubsection*{Conditional Distribution}
+$$
+u_{i|j} = u_i+\Sigma_{ij}\Sigma_{jj}^{-1}(x_j-u_j)
+$$$$
+\Sigma_{i|j} = \Sigma_{jj}-\Sigma_{ij}^T\Sigma_{ii}^{-1}\Sigma_{ij}
+$$
+\subsubsection*{Product of two normals}
+\begin{eqnarray*}
+{\rm Norm}_{\bf x}[{\bf a, A}]{\rm Norm}_{\bf x}[{\bf b, B}] &=& k \cdot {\rm Norm}_{\bf x}{\bf [(A^{-1}+B^{-1})^{-1}(A^{-1}a+B^{-1}b),(A^{-1}+B^{-1})^{-1}]}\\
+k &=&{\rm Norm}_{\bf a}[{\bf b, A+B}]
+\end{eqnarray*}
+\subsubsection*{change of variables}
+$$
+{\rm Norm}_{\bf x}[{\bf Ay+b,\Sigma}] = k\cdot{\rm Norm}_{\bf y}[{\bf A'x+b',\Sigma'}]
+$$
+where 
+\begin{eqnarray*}
+\bf A' &=& \Sigma'A^T\Sigma^{-1}\\
+b' &=& -\Sigma'A^T\Sigma^{-1}b \\
+\Sigma &=& (A^T\Sigma^{-1}A)^{-1}\\
+\end{eqnarray*}
 \end{document}
 
 
