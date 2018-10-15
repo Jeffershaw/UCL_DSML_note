@@ -151,11 +151,38 @@ negative
 $$
 P(F(X)\leq z) = P(F^{-1}(F(x))\leq F^{-1}(z)) = P(X\leq F^{-1}(z))=F(F^{-1}(z))=z
 $$
+\subsubsection*{Level}
+The threshold probability of 0.05 was the level of the test.\\
+The choice of a particular level may be guided by the need to trade off Type 1 and Type 2 errors.
 \subsubsection*{Type 1 errors}
+Type 1 error occurs when we reject the null hypothesis $\rm H_0$, when it is true
 \subsubsection*{Type 2 errors}
+Type 2 error occurs when we fail to reject $\rm H_0$ when it is false.
 \subsubsection*{power of the test}
+The probability of avoiding a Type 2 error is the power of the test.\\
+That is the probability that we reject $\rm H_0$ given that it is false.\\
+The power of a test varies with sample size\\
+The power of a test also varies with the level of the test.\\
+The ways to increase the power of our test: collect more data, allow for a higher Type 1 error, use a better test statistic, make stronger assumption.
+\subsubsection*{Testing procedure}
+Specify a null and alternative hypothesis.\\
+Specify the level of the test.\\
+Specify a suitable test statistic.\\
 \subsubsection*{critical region}
-\subsubsection*{Composite hypothesis}
+The set of all test statistic values which would cause us to reject $\rm H_0$.
+\subsubsection*{t-test}
+For the small sample, and iid normal distribution:
+$$
+T = \frac{\sqrt{n}(\bar{X_n}-\mu_0)}{S_n} \sim \tau(n-1)
+$$
+This is called a t-distribution with $n-1$ degrees of freedom
+\subsubsection*{Wald test}
+Sample $X^{(i)}$ can be from any distribution.\\
+Sample sizes must be assumed to be `big enough' that CLT applies.\\
+Hence, the distribution of test statistic is $\rm N(0,1)$. That is the case of t-distribution which $n \rightarrow \infty$
+\subsubsection*{Goodness-of-fit tests (chi-square test)}
+still needs to be discussed.
+\subsubsection*{Paired tests}
 
 \end{document}
 
