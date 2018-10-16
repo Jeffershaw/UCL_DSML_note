@@ -287,7 +287,29 @@ Here is the hessian matrix for logistic loss function:
 &=& \sum_{i=1}^{N}{\bf x}^i_k\frac{\partial g({\bf w}^T{\bf x}^i)}{\partial w_j}\\
 &=& \sum_{i=1}^{N}{\bf x}^i_kg({\bf w}^T{\bf x}^i)(1-g({\bf w}^T{\bf x}^i)){\bf x}^i_j
 \end{eqnarray*}
-
+\subsection*{Perception}
+\subsection*{SVM}
+Given the Discriminant: $y({\bf x}) = {\bf w}^T{\bf x}+b$
+\subsubsection*{Functional Margins}
+\begin{eqnarray*}
+{\bf w}^T{\bf x}^i \gg0, if y^i = 1\\
+{\bf w}^T{\bf x}^i \ll0, if y^i = -1\\
+y^i({\bf w}^T{\bf x}^i) \gg 0
+\end{eqnarray*}
+According to that ${\bf w}$ is vertical to the boundary and ${\bf x} = {\bf x}_{\perp}+\gamma\frac{\bf w}{\bf |w|}$, the distance between the point and the boundary would be $\gamma = \frac{{\bf w^T}{\bf x}+b}{|{\bf w}|}$
+\subsubsection*{Support Vector}
+The vectors (cases) that define the hyperplane are the support vectors.\\
+Here we define that, for the positive support vector, ${\bf w}^T{\bf x}_++b=+1$ and ${\bf w}^T{\bf x}_-+b=-1$\\
+In that way, the margin could be given as follow
+$$
+\frac{{\bf w}^T({\bf x}_+-{\bf x}_-)}{||\bf w||} = \frac{2}{||\bf w||}
+$$
+Then we needs to maximum the margin.
+\begin{eqnarray*}
+\max_{\bf w} \frac{2}{||\bf w||} \rightarrow \min_{\bf w}||{\bf w}||^2\\
+\texttt{s.t. } y^i({\bf w}^T{\bf x}^i+b)\ge 1  \quad  \forall x^i
+\end{eqnarray*}
+s.t. 
 \end{document}
 
 

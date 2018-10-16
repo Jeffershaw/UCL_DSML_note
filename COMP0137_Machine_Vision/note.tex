@@ -205,6 +205,17 @@ where
 b' &=& -\Sigma'A^T\Sigma^{-1}b \\
 \Sigma &=& (A^T\Sigma^{-1}A)^{-1}\\
 \end{eqnarray*}
+\section*{Learning and Inference}
+The observe measured data, $\bf x$\\
+Draw inference from it about the state of world, $\bf w$\\
+If $\bf w$ is continuous, call this regression.\\
+If $\bf w$ is discrete, call this classification.\\
+To compute the probability distribution $Pr({\bf w|x})$, we need: a model(relates visual data $\bf x$ and $\bf w$, the relationships depends on parameter $\bf \theta$), a learning algorithm(fits parameter $\bf \theta$ from paired training examples $\bf x_i,w_i$), an inference algorithm (use model to return $Pr({\bf w|x})$ given new observed data $\bf x$)
+\subsection*{Types of Model}
+\subsubsection*{1. Model contingency of the world on the data $Pr({\bf w|x})$ (Discriminative models)}
+\subsubsection*{2. Model joint occurrence of the world and data $Pr({\bf x,w})$ （Generative models）}
+\subsubsection*{3. Model contingency of data on the world $Pr({\bf x|w})$ (Generative models)}
+
 \end{document}
 
 
