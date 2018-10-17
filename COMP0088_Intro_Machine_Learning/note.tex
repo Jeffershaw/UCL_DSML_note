@@ -189,11 +189,11 @@ L({\bf w}) = \sum_{i=1}^{N}(y^i-{\bf w}^{\rm T}\phi({\rm x}^i))^{\rm T}
 $$
 where $\phi({\bf x}^i)$ is a polynomial function for ${\bf x}^i$
 \subsubsection*{normalization}
-L1 norm(euclidean) norm:
+L2 norm(euclidean) norm:
 $$
 ||{\bf w}||_2 = \sqrt{\sum_{d=1}^{D}w_d^2}=\sqrt{<{\bf w},{\bf w}>}
 $$\\
-L2 norm(manhattan) norm:
+L1 norm(manhattan) norm:
 $$
 ||{\bf w}||_1 = \sum_{d=1}^{D}|w_d|
 $$\\
@@ -287,7 +287,29 @@ Here is the hessian matrix for logistic loss function:
 &=& \sum_{i=1}^{N}{\bf x}^i_k\frac{\partial g({\bf w}^T{\bf x}^i)}{\partial w_j}\\
 &=& \sum_{i=1}^{N}{\bf x}^i_kg({\bf w}^T{\bf x}^i)(1-g({\bf w}^T{\bf x}^i)){\bf x}^i_j
 \end{eqnarray*}
+
 \subsection*{Perception}
+Given $f(x)=sign(wx+b)$ as perception which is a discriminant. The distance between any point $x_0$ and the boundary is $\frac{|w\cdot x_0+b|}{||w||}$.\\
+For the wrong classified data $(x_i,y_i)$: $-y_i(w\cdot x_i+b)>0$. Therefore, the distance between wrong classified data $(x_i,y_i)$ and the boundary is $-\frac{y_i(w\cdot x_i+b)}{||w||}$.\\
+Then the loss function would be 
+$$
+L(w,b)=-\sum_{x_i\in M}y_i(w\cdot x_i+b)
+$$
+Where the $\frac{1}{||w||}$ is ignored. The reasons: 1) $||w||$ is only a scalar, which does not influence the vector $w$ direction 2)The perception training end condition is that loss $L(w,b)=0$, so the $||w||$ does not influence that.\\
+For the training, the update would be:
+$$
+w\leftarrow w+\eta y_ix_i
+$$$$
+b\leftarrow b+\eta y_i
+$$
+\subsubsection*{Dual Property}
+For fast calculation.
+$$
+w=\sum_{i=1}^{N}\alpha_iy_ix_i
+$$$$
+b=\sum_{i=1}^{N}\alpha_iy_i
+$$
+to be continued.
 \subsection*{SVM}
 Given the Discriminant: $y({\bf x}) = {\bf w}^T{\bf x}+b$
 \subsubsection*{Functional Margins}
@@ -296,7 +318,7 @@ Given the Discriminant: $y({\bf x}) = {\bf w}^T{\bf x}+b$
 {\bf w}^T{\bf x}^i \ll0, if y^i = -1\\
 y^i({\bf w}^T{\bf x}^i) \gg 0
 \end{eqnarray*}
-According to that ${\bf w}$ is vertical to the boundary and ${\bf x} = {\bf x}_{\perp}+\gamma\frac{\bf w}{\bf |w|}$, the distance between the point and the boundary would be $\gamma = \frac{{\bf w^T}{\bf x}+b}{|{\bf w}|}$
+According to that \textbf{${\bf w}$ is vertical to the boundary}(Due to ${\bf w}\cdot{\bf x}=-b \quad \forall {\bf x}$) and ${\bf x} = {\bf x}_{\perp}+\gamma\frac{\bf w}{\bf |w|}$, the distance between the point and the boundary would be $\gamma = \frac{{\bf w^T}{\bf x}+b}{|{\bf w}|}$
 \subsubsection*{Support Vector}
 The vectors (cases) that define the hyperplane are the support vectors.\\
 Here we define that, for the positive support vector, ${\bf w}^T{\bf x}_++b=+1$ and ${\bf w}^T{\bf x}_-+b=-1$\\
@@ -307,9 +329,13 @@ $$
 Then we needs to maximum the margin.
 \begin{eqnarray*}
 \max_{\bf w} \frac{2}{||\bf w||} \rightarrow \min_{\bf w}||{\bf w}||^2\\
-\texttt{s.t. } y^i({\bf w}^T{\bf x}^i+b)\ge 1  \quad  \forall x^i
+\texttt{s.t. } y^i({\bf w}^T{\bf x}^i+b)\ge 1  \quad  \forall i
 \end{eqnarray*}
-s.t. 
+\subsubsection*{Dual}
+\begin{eqnarray*}
+\min \sum_{i=1}^{N}\sum_{j=1}^{N}\alpha^i\alpha^jy^iy^j<{\bf x}^i,{\bf x}^j> \\
+\texttt{s.t. } y^i\left(\sum_{j=1}^{N}\alpha^jy^j<{\bf x}^i,{\bf x}^j>+b \right)\ge 1  \quad  \forall i
+\end{eqnarray*}
 \end{document}
 
 
