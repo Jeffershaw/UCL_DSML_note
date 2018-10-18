@@ -152,6 +152,54 @@ Two graphs represent the same set of independence assumptions if and only if the
 \subsubsection*{BN representation}
 BN cannot represent whatever independence statements are present in $p$.\\
 Fundamentally, the actual \textbf{numerical distribution $p$ contains much more information than a graph can represent}.
+
+\section*{Markov Network}
+A Markov Network is an undirected graph in which there is a potential (non-negative function) $\psi$ defined on each maximal clique.\\
+The joint distribution is proportional to the product of all clique potentials:
+\begin{eqnarray*}
+P(Y) &=& \frac{1}{Z}\prod_{C}\Psi_C(Y_C) \\
+z &=& \sum_Y\prod_{C}\Psi_C(Y_C)
+\end{eqnarray*}
+where the $\Psi_C(Y_C)$ is a potential function (strict positive). The potential function would usually indicated as 
+$$
+\Psi_C(Y_C) = \exp\{-E(Y_C)\}
+$$
+\subsection*{Iterated conditional Modes}
+To find the minimum of a function $f(x_1,\ldots,x_D)$, firstly make a guess $x_1^*,\ldots,x_D^*$. Then look at the single variable $x_i$ keeping all others fixed. Then set $x_i^*={\rm argmin}_{x_i}F(x_i)$.
+Then repeat this, sweeping through all variables, usually in a random order.Then repeat the whole process until convergence.
+\subsection*{Boltzmann machine}
+\subsection*{Ising model}
+Given $x_i\in {+1,-1}$, then the joint distribution would be:
+\begin{eqnarray*}
+p(x_1,\ldots,x_9)=\frac{1}{Z}\prod_{i\sim j}\phi_{ij}(x_i,x_j)\\
+\phi_{ij}(x_i,x_j) = e^{-\frac{1}{2T}(x_i-x_j)^2}
+\end{eqnarray*}
+\subsection*{Rule for independence in Markov Networks}
+Remove all links neighboring the variables in the conditioning set $Z$.\\
+If there is no path from any member of $x$ to any member of $y$,then $x$ and $y$ are conditionally independent given $z$.
+\subsection*{Factor Graphs}
+A square node represents a factor (non negative function) of its neighboring variables. FGs are most commonly used for inference.
+\section*{Markov Models}
+\subsubsection*{Time-Series}
+A time-series is an ordered sequence:
+$$
+x_{a:b}=\{x_a,x_{a+1},\ldots,x_b\}
+$$
+For the time series data, we need a model $p(v_{1:T})$. For the causal consistency, it is meaningful to consider the decomposition.
+$$
+p(v_{1:T}) = \prod_{t=1}^{T}p(v_t|v_{1:t-1})
+$$
+with the convention $p(v_t|v_{1:t-1}) = p(v_1)$ for $t=1$.\\
+Only the recent past is relevant:
+$$
+p(v_t|v_1,\ldots,v_{t-1}) = p(v_t|v_{t-L},\ldots,v_{t-1})
+$$
+where $L\ge 1$ is the order of the Markov chain.
+$$
+p(v_{1:T}) = p(v_1)p(v_2|v_1)p(v_3|v_2)\ldots p(v_T|v_{T-1})
+$$
+For a stationary Markov chain the transitions p(v_t=s'|v_{t-1}=s)=f'(s',s) are time-independent.
+\subsection*{Fitting Markov models}
 \end{document}
 
 
