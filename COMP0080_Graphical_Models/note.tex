@@ -164,10 +164,12 @@ where the $\Psi_C(Y_C)$ is a potential function (strict positive). The potential
 $$
 \Psi_C(Y_C) = \exp\{-E(Y_C)\}
 $$
+For the image recovery, the probability of pixel $Pr(x)$ is only related to the  sum of neighboring points and the $y$.
 \subsection*{Iterated conditional Modes}
 To find the minimum of a function $f(x_1,\ldots,x_D)$, firstly make a guess $x_1^*,\ldots,x_D^*$. Then look at the single variable $x_i$ keeping all others fixed. Then set $x_i^*={\rm argmin}_{x_i}F(x_i)$.
 Then repeat this, sweeping through all variables, usually in a random order.Then repeat the whole process until convergence.
 \subsection*{Boltzmann machine}
+
 \subsection*{Ising model}
 Given $x_i\in {+1,-1}$, then the joint distribution would be:
 \begin{eqnarray*}
@@ -198,7 +200,7 @@ where $L\ge 1$ is the order of the Markov chain.
 $$
 p(v_{1:T}) = p(v_1)p(v_2|v_1)p(v_3|v_2)\ldots p(v_T|v_{T-1})
 $$
-For a stationary Markov chain the transitions p(v_t=s'|v_{t-1}=s)=f'(s',s) are time-independent.
+For a stationary Markov chain the transitions $p(v_t=s'|v_{t-1}=s)=f'(s',s)$ are time-independent.
 \subsection*{Fitting Markov models}
 \end{document}
 

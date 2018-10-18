@@ -213,8 +213,26 @@ If $\bf w$ is discrete, call this classification.\\
 To compute the probability distribution $Pr({\bf w|x})$, we need: a model(relates visual data $\bf x$ and $\bf w$, the relationships depends on parameter $\bf \theta$), a learning algorithm(fits parameter $\bf \theta$ from paired training examples $\bf x_i,w_i$), an inference algorithm (use model to return $Pr({\bf w|x})$ given new observed data $\bf x$)
 \subsection*{Types of Model}
 \subsubsection*{1. Model contingency of the world on the data $Pr({\bf w|x})$ (Discriminative models)}
+1. Choose an appropriate from form for $Pr(\bf w)$\\
+2. Make parameters a function of $\bf x$\\
+3. Function takes parameters $\theta$ that define its shape.\\
+Inference: evaluate $\bf Pr(w|x)$
 \subsubsection*{2. Model joint occurrence of the world and data $Pr({\bf x,w})$ （Generative models）}
+1. COncatenate $\bf x$ and $\bf w$ to make $\bf z=[x^T w^T]$\\
+2. Model of pdf of $\bf z$\\
+3. Pdf takes parameter $\theta$ that define its shape\\
+Inference: compute $Pr({\bf w|x})$ using Bayes rule.
+$$
+Pr({\bf w|x}) = \frac{Pr({\bf x,w})}{Pr({\bf x})}= \frac{Pr({\bf x,w})}{\int Pr({\bf x,w})d{\bf w}}
+$$
 \subsubsection*{3. Model contingency of data on the world $Pr({\bf x|w})$ (Generative models)}
+1. Choose an appropriate form for $Pr({\bf x})$\\
+2. Make parameters a function of $\bf w$\\
+3. Function takes parameter $\theta$ that define its shape.\\
+Inference: define prior $Pr({\bf w})$ and then compute $Pr({\bf w|x})$ using Bayes' rule.
+$$
+Pr({\bf w|x}) = \frac{Pr({\bf x|w})Pr({\bf w})}{\int Pr(\bf x|w)Pr({\bf w})d{\bf w}}
+$$
 
 \end{document}
 
