@@ -233,7 +233,21 @@ Inference: define prior $Pr({\bf w})$ and then compute $Pr({\bf w|x})$ using Bay
 $$
 Pr({\bf w|x}) = \frac{Pr({\bf x|w})Pr({\bf w})}{\int Pr(\bf x|w)Pr({\bf w})d{\bf w}}
 $$
-
+\subsection*{Bessel correction}
+$s^2 = (\frac{n}{n-1})s_n^2$
+working this later.
+\section*{Learning and inference}
+\subsection*{Mixture of Gaussian}
+$$
+Pr({\bf x|\theta}) = \sum_{k=1}^{K}\lambda_k{\rm Norm}_{\bf x}[\mu_k,\Sigma_k]
+$$
+\subsection*{Hidden variables}
+\begin{eqnarray*}
+Pr({\bf x}) &=& \int Pr({\bf x,h})d{\bf h} \\
+Pr({\bf x|\theta}) &=& \int Pr({\bf x,h|\theta})d{\bf h}\\
+\hat\theta  &=& {\rm argmax}_\theta\left[\sum_{i=1}^{\bf I}log[\int Pr({\bf x}_i,{\bf h}_i|\theta)d{\bf h}_i]\right] \\
+B[\{q_i({\bf h}_i)\},\theta] &=& \sum_{i=1}^{\bf I}\int q_i({\bf h}_i)\log[\frac{Pr({\bf x,h}_i|\theta)}{q_i({\bf h}_i)}]d{\bf h}_{1\ldots I}\le \sum_{i=1}^{\bf I}log[\int Pr({\bf x}_i,{\bf h}_i|\theta)d{\bf h}_i]
+\end{eqnarray*}
 \end{document}
 
 
