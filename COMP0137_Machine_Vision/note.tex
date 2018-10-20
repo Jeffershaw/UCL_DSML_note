@@ -237,6 +237,11 @@ $$
 $s^2 = (\frac{n}{n-1})s_n^2$
 working this later.
 \section*{Learning and inference}
+\subsection*{Mixture of Model}
+$$
+Pr({\bf x|\theta}) = \sum_{k=1}^KPr({\bf x},h=k|\theta)
+$$
+
 \subsection*{Mixture of Gaussian}
 $$
 Pr({\bf x|\theta}) = \sum_{k=1}^{K}\lambda_k{\rm Norm}_{\bf x}[\mu_k,\Sigma_k]
@@ -248,6 +253,33 @@ Pr({\bf x|\theta}) &=& \int Pr({\bf x,h|\theta})d{\bf h}\\
 \hat\theta  &=& {\rm argmax}_\theta\left[\sum_{i=1}^{\bf I}log[\int Pr({\bf x}_i,{\bf h}_i|\theta)d{\bf h}_i]\right] \\
 B[\{q_i({\bf h}_i)\},\theta] &=& \sum_{i=1}^{\bf I}\int q_i({\bf h}_i)\log[\frac{Pr({\bf x,h}_i|\theta)}{q_i({\bf h}_i)}]d{\bf h}_{1\ldots I}\le \sum_{i=1}^{\bf I}log[\int Pr({\bf x}_i,{\bf h}_i|\theta)d{\bf h}_i]
 \end{eqnarray*}
+\subsection*{Lower bound}
+Because the log of sum is hard to derivate to 0.\\
+According to Jensen's inequality when $f(x)$ is a convex function:
+$$
+f({\bf E[X]}) \le {\bf E}[f({\bf X})] 
+$$
+For the concave function:
+$$
+f({\bf E[X]}) \ge {\bf E}[f({\bf X})] 
+$$
+Therefore the lower bound holds:
+\begin{eqnarray*}
+\log({\bf E}\left[\frac{Pr({\bf x,h}_i|\theta)}{q({\bf h}_i)}\right]) &\ge& {\bf E}\left[log(\frac{Pr({\bf x,h}_i|\theta)}{q({\bf h}_i)})\right] \\
+\log(\int \left[\frac{Pr({\bf x,h}_i|\theta)}{q({\bf h}_i)}q({\bf h}_i)\right]d{\bf h}_i) &\ge& \int \left[q({\bf h}_i)log(\frac{Pr({\bf x,h}_i|\theta)}{q({\bf h}_i)})\right]d{\bf h}_i \\
+\sum_{i=1}^{\bf I}log[\int Pr({\bf x}_i,{\bf h}_i|\theta)d{\bf h}_i] &\ge & \sum_{i=1}^{\bf I}\int q_i({\bf h}_i)\log[\frac{Pr({\bf x,h}_i|\theta)}{q_i({\bf h}_i)}]d{\bf h}_{1\ldots I}
+\end{eqnarray*}
+Where $\log$ function is the $f({\bf X})$, and $q({\bf h}_i)$ is $Pr({\bf h}_i|{\bf x}_i,\theta^{[t]})$
+\subsection*{E-Step}
+Maximize the bound w.r.t. distribution $q({\bf h}_i)$
+$$
+\hat q_i({\bf h}_i) = Pr({\bf h}_i|{\bf x}_i,{\bf \theta}^{[t]}) = \frac{ Pr({\bf x}_i|{\bf h}_i,{\bf \theta}^{[t]})Pr({\bf h}_i|\theta^{[t]})}{Pr({\bf x}_i)}
+$$
+\subsection*{M-Step}
+Maximize bound w.r.t parameter $\theta$
+$$
+\hat \theta^{[t+1]} = {\rm argmax}_{\theta}\left[\sum_{i=1}^{I}\int \hat q_i({\bf h}_i)\log [Pr({\bf x}_i,{\bf h}_i|\theta)] d{\bf h}_i\right]
+$$
 \end{document}
 
 
