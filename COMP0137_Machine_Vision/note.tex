@@ -246,6 +246,7 @@ $$
 $$
 Pr({\bf x|\theta}) = \sum_{k=1}^{K}\lambda_k{\rm Norm}_{\bf x}[\mu_k,\Sigma_k]
 $$
+Usually, the dimension would be smaller than sample.
 \subsection*{Hidden variables}
 \begin{eqnarray*}
 Pr({\bf x}) &=& \int Pr({\bf x,h})d{\bf h} \\
@@ -280,6 +281,23 @@ Maximize bound w.r.t parameter $\theta$
 $$
 \hat \theta^{[t+1]} = {\rm argmax}_{\theta}\left[\sum_{i=1}^{I}\int \hat q_i({\bf h}_i)\log [Pr({\bf x}_i,{\bf h}_i|\theta)] d{\bf h}_i\right]
 $$
+\subsection*{E-step of MoG}
+\begin{eqnarray*}
+Pr(h_i=k|{\bf x}_i,\theta^{[t]}) &=& \frac{Pr({\bf x}_i|h_i=k,\theta^{[t]})Pr(h_i=k,\theta^{[t]})}{\sum_{j=1}^{K}Pr({\bf x}_i|h_i=j,\theta^{[t]})Pr(h_i=j,\theta^{[t]})}\\
+&=& \frac{\lambda_k {\rm Norm}_{\bf x_i}[\mu_k,\Sigma_k]}{\sum_{j=1}^{K}\lambda_j {\rm Norm}_{\bf x_i}[\mu_j,\Sigma_j]}\\
+&=& r_{i,k}
+\end{eqnarray*}
+\subsection*{M-step of MoG}
+Take derivative, equal to zero and solve:
+\begin{eqnarray*}
+\lambda_k^{[t+1]} &=& \frac{\sum_{i=1}^{I} r_{i,k}}{\sum_{j=1}^{K}\sum_{i=1}^{I}r_{i,j}} \\
+\mu_k^{[t+1]} &=& \frac{\sum_{i=1}^{I}r_{i,k}{\bf x}_i}{\sum_{i=1}^{I}r_{i,k}}\\
+\Sigma_k^{[t+1]} &=& \frac{\sum_{i=1}^{I}r_{i,k}({\bf x}_i-\mu_k^{[t+1]})({\bf x}_i-\mu_k^{[t+1]})^T}{\sum_{i=1}^{I}r_{i,k}} 
+\end{eqnarray*}
+\subsection*{Student t-distribution}
+not willing to write, seems not important
+\subsection*{Factor analysis}
+not willing to write, seems not important
 \end{document}
 
 
