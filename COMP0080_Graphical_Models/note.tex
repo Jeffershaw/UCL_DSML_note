@@ -200,8 +200,27 @@ where $L\ge 1$ is the order of the Markov chain.
 $$
 p(v_{1:T}) = p(v_1)p(v_2|v_1)p(v_3|v_2)\ldots p(v_T|v_{T-1})
 $$
-For a stationary Markov chain the transitions $p(v_t=s'|v_{t-1}=s)=f'(s',s)$ are time-independent.
-\subsection*{Fitting Markov models}
+For a stationary Markov chain the transitions $p(v_t=s'|v_{t-1}=s)=f'(s',s)$ are time-independent.\\
+$p(v_t|v_{t-1})$ is the transition matrix.\\
+\subsection*{Equilibrium distribution}
+$$
+{\bf p}_t = {\bf M}^{t-1}{\bf p}_1
+$$
+where $t\rightarrow \infty$ is independent of initial distribution ${\bf p}_1$, then ${\bf p}_{\infty}$ is called the equilibrium distribution of the chain:
+$$
+{\bf p}_\infty = {\bf Mp}_\infty
+$$
+Due to the Markov convergence (transition matrix not change, finite states, transit to any states, not a simple loop), the matrix eigenvalue has 1 value at most. Therefore, it would converge.
+\subsection*{Mixture of Markov models}
+$$
+p(v_{1:T}) =\sum_{h=1}^{H}p(h)p(v_{1:T}|h)=\sum_{h=1}^{H}p(h)\prod_{t=1}^{T}p(v_t|v_{t-1},h)
+$$
+Applying EM later.
+\subsection*{Hidden Markov Models}
+$$
+p(h_{1:t},v_{1:T}) = p(v_1|h_1)p(h_1)\prod_{t=2}^{T}p(v_t|h_t)p(h_t|h_{t-1})
+$$
+where $p(h_t|h_{t-1})$ and $p(v_t|h_t)$ are constant through time.
 \end{document}
 
 
