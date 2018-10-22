@@ -183,6 +183,36 @@ Hence, the distribution of test statistic is $\rm N(0,1)$. That is the case of t
 \subsubsection*{Goodness-of-fit tests (chi-square test)}
 still needs to be discussed.
 \subsubsection*{Paired tests}
+\subsection*{Confidence Intervals}
+$$
+X \sim N(\mu,\sigma^2)
+$$
+$$
+\bar X = \frac{1}{n}\sum_{i=1}^{n}X_i
+$$
+$\bar X$ is the sample average. If $X_i \sim N(\mu,\frac{\sigma^2}{n})$, then
+$$
+\bar X \sim N
+$$
+$$
+Var(\bar X) = \frac{(\frac{\sum_ix_i}{n}-\mu)^2}{1}=(\frac{\sum_i(x_i-\mu)}{n})^2=\sigma^2/n 
+$$Then
+$$
+\frac{\bar X-\mu}{\sqrt{\sigma^2/n}} \sim N(0,1)
+$$
+This a pivot, a function of parameter of interest which has a known distribution.\\
+$$
+P\left(\frac{\bar X-\mu}{\sqrt{\sigma^2/n}}\le 1.5\right) = p(Z\le 1.5)=p\left(\mu\ge \bar X-\frac{1.5\sigma}{\sqrt n}\right) = 0.93
+$$
+\subsubsection*{Coverage}
+The interval $[\bar X-1.5\sigma/\sqrt n,\infty)$ will contain $\mu$ 93\% of the time
+\subsection*{two side interval}
+It is hard to calculate the confidence interval, therefore a CLT could help t solve it with large sample.
+\subsection*{Bootstrap}
+A foundation of bootstrap is sampling with replacement\\
+1. Randomly select a data point.\\
+2. Add it to the `re-sample'\\
+3. Put it back in the box.\\
 
 \end{document}
 
