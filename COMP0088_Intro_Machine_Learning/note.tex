@@ -336,6 +336,16 @@ Then we needs to maximum the margin.
 \min \sum_{i=1}^{N}\sum_{j=1}^{N}\alpha^i\alpha^jy^iy^j<{\bf x}^i,{\bf x}^j> \\
 \texttt{s.t. } y^i\left(\sum_{j=1}^{N}\alpha^jy^j<{\bf x}^i,{\bf x}^j>+b \right)\ge 1  \quad  \forall i
 \end{eqnarray*}
+\subsection*{HoG to image}
+\subsection*{Kernel}
+Kernel: $K({\bf x,y})= <\phi({\bf x}),\phi({\bf y})>$\\
+Polynomial Kernel:$K({\bf x,y})=({\bf x^Ty}+1)^p$, which $\phi({\bf x}) = \left[\begin{matrix}
+x_1^2\\x_2^2\\ \sqrt2x_1x_2 \\ \sqrt2x_1 \\ \sqrt2x_2 \\ 1
+\end{matrix}\right]$\\
+Mercer Kernel:\\
+1. Symmetric $k({\bf x}_i,{\bf x}_j) = k({\bf x}_j,{\bf x}_i)$
+\section*{Ensemble learning}
+\textbf{Generate a group of base-learners} which has higher accuracy when \textbf{combined}.
 
 \end{document}
 
