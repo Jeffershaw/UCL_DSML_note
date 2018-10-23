@@ -183,6 +183,9 @@ Hence, the distribution of test statistic is $\rm N(0,1)$. That is the case of t
 \subsubsection*{Goodness-of-fit tests (chi-square test)}
 still needs to be discussed.
 \subsubsection*{Paired tests}
+\subsection*{Bonferroni correction}
+While testing $n$ independent hypothesis in the same data set, the p value should be $1/n$
+
 \subsection*{Confidence Intervals}
 $$
 X \sim N(\mu,\sigma^2)
@@ -213,6 +216,22 @@ A foundation of bootstrap is sampling with replacement\\
 1. Randomly select a data point.\\
 2. Add it to the `re-sample'\\
 3. Put it back in the box.\\
+\subsection*{Using Bootstrap to calculate SE}
+1. Draw $X^{(1)}*,\ldots,X^{(n)}*\sim \hat F_n$\\
+2. Compute $\hat X_n^*$ by averaging $X_1^*,\ldots,X_n^*$\\
+3. Repeat steps 1 and 2, $B$ times, to get $\bar X_{n,1}^*,\ldots,\bar X_{n,B}^*$\\
+4. Let 
+$$
+s.e._{boot} = \sqrt{\frac{1}{B}\sum_{b=1}^{B}\left(\bar X_{n,b}^*-\frac{1}{B}\sum_{r=1}^{B}\bar X_{n,r}^*\right)^2}
+$$
+\subsection*{Bootstrap pivotal interval}
+Define $H(r)=P(\hat \theta-\theta\le r)$ \\
+Define quantiles such that we get coverage $1-\alpha$:
+\begin{eqnarray*}
+P(a(\hat \theta_n)\le \theta \le b(\hat \theta_n)) &=& 1-\alpha\\
+a(\hat \theta_n) &=&\hat \theta -H^{-1}(1-\alpha/2)\\
+b(\hat \theta_n) &=& \hat \theta-H^{-1}(\alpha/2)\\
+\end{eqnarray*}
 
 \end{document}
 
