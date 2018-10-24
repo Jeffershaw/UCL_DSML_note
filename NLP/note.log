@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  24 OCT 2018 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  24 OCT 2018 00:03
 entering extended mode
 **./note.tex
 (note.tex
@@ -168,11 +168,25 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\eqnarray\eqnarray.sty"
+equationarray 1.3 <December 1, 2010>
+Package: eqnarray 
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen127
+\extrarowheight=\dimen128
+\NC@list=\toks23
+\extratabsurround=\skip50
+\backup@length=\skip51
+)
+\@eqargcnt=\count104
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-\c@lastnote=\count104
- (note.aux)
+\c@lastnote=\count105
+
+No file note.aux.
 \openout1 = `note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -188,23 +202,22 @@ LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 61.
-
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen127
+\scratchcounter=\count106
+\scratchdimen=\dimen129
 \scratchbox=\box29
-\nofMPsegments=\count106
-\nofMParguments=\count107
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen128
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
-\everyMPtoPDFconversion=\toks24
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen130
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -295,47 +308,24 @@ LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
- [2] [3] [4]
-Missing character: There is no ï in font ptmb7t!
-Missing character: There is no ¼ in font ptmb7t!
-Missing character: There is no ˆ in font ptmb7t!
-Missing character: There is no ï in font ptmb7t!
-Missing character: There is no ¼ in font ptmb7t!
-Missing character: There is no ‰ in font ptmb7t!
- [5]
-[6] [7] [8] (note.aux) ) 
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (note.aux) ) 
 Here is how much of TeX's memory you used:
- 3535 strings out of 493323
- 46444 string characters out of 3139069
- 121340 words of memory out of 3000000
- 7016 multiletter control sequences out of 15000+200000
- 21952 words of font info for 59 fonts, out of 3000000 for 9000
+ 3566 strings out of 493323
+ 46987 string characters out of 3139069
+ 116578 words of memory out of 3000000
+ 7055 multiletter control sequences out of 15000+200000
+ 13425 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,28p,375b,195s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
-c}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/times/utmr8a.pfb>
-Output written on note.pdf (8 pages, 175540 bytes).
+ 39i,6n,28p,238b,193s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program F
+iles/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/
+type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
+tmr8a.pfb>
+Output written on note.pdf (1 page, 20904 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 15 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

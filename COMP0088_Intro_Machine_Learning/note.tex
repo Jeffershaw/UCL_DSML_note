@@ -336,7 +336,27 @@ Then we needs to maximum the margin.
 \min \sum_{i=1}^{N}\sum_{j=1}^{N}\alpha^i\alpha^jy^iy^j<{\bf x}^i,{\bf x}^j> \\
 \texttt{s.t. } y^i\left(\sum_{j=1}^{N}\alpha^jy^j<{\bf x}^i,{\bf x}^j>+b \right)\ge 1  \quad  \forall i
 \end{eqnarray*}
-
+\section*{Tree(not in lecture)}
+\subsection*{Decision tree}
+Entropy measures the uncertain of the random variable $X$\\
+Here the distribution of $X$ is $P(X=x_i)=p_i, i=1,2,\ldots,n$ \\
+Entropy of $X$: $H(X) = -\sum_{i=1}^{n}p_i\log p_i$ \\
+Conditional Entropy: $H(Y|X)=\sum_{i=1}^{n}p_iH(Y|X=x_i)$ \\
+Information Gain is the difference between empirical entropy and empirical conditional entropy.
+$g(D,A) = H(D)-H(D|A)$\\
+Information gain ratio:$g_R(D,A)=\frac{g(D,A)}{H_A(D)}$
+\subsection*{ID3}
+using information gain
+\subsection*{C4.5}
+using information gain ratio
+\subsection*{Regression Tree}
+$f(x)=\sum_{m=1}^{M}c_mI(x\in R_m)$
+\subsection*{Classification Tree}
+K classes, and the probability is $p_k$\\
+\begin{eqnarray*}
+Gini(p) &=& \sum_{k=1}^{K}p_k(1-p_k)=1-\sum_{k=1}^{K}p_k^2\\
+Gini(D,A) &=& \frac{|D_1|}{|D|}Gini(D_1)+\frac{|D_2|}{|D|}Gini(D_2）
+\end{eqnarray*}
 \end{document}
 
 
