@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1540305351 "note.tex" "note.pdf" "note" 1540305352
+["pdflatex"] 1540403916 "note.tex" "note.pdf" "note" 1540403917
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1480098688 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -98,9 +98,9 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1520350859 4129591 1308c0a7aa71fdcfb403e0eb5dc666f5 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "note.aux" 1540305352 79 c6564365f6839d56d13591c9384028df ""
-  "note.tex" 1540305351 13342 b8a281d88a7d158287050dbfe94993da ""
+  "note.aux" 1540403917 79 c6564365f6839d56d13591c9384028df ""
+  "note.tex" 1540403916 17132 7a9949010c9b3e2624ec739a52bd9ad1 ""
   (generated)
+  "note.log"
   "note.aux"
   "note.pdf"
-  "note.log"
