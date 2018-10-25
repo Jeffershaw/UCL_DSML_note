@@ -382,7 +382,14 @@ f({\bf x}) = <{\bf w},{\bf x}>+b = \sum_{i=1}^N\alpha^iy^i<{\bf x}^i,{\bf x}>+b
 $$
 Linear kernel: $\bf K(x,y)=x^Ty$\\
 Polynomial kernel: $\bf K(x,y) = (x^Ty+1)^p$\\
-Radial Basis Function (a.k.a Gaussian) Kernel: ${\bf K(x,y)} = \exp(-\frac{1}{2\sigma^2}||{\bf x-y}||^2)$
+Radial Basis Function (a.k.a Gaussian) Kernel: ${\bf K(x,y)} = \exp(-\frac{1}{2\sigma^2}||{\bf x-y}||^2)$ \\
+\subsubsection*{Radial Basis Function kernel expansion}
+\begin{eqnarray*}
+e^{-\gamma||{\bf x}_i-{\bf x}_j||^2} &=& e^{-\gamma({\bf x}_i-{\bf x}_j)^2} = e^{-\gamma{\bf x}_i^2+2\gamma{\bf x}_i{\bf x}_j-\gamma{\bf x}_j^2}\\
+&=& e^{-\gamma{\bf x}_i^2-\gamma{\bf x}_j^2}(1+\frac{2\gamma{\bf x}_i{\bf x}_j}{1!}+\frac{(2\gamma{\bf x}_i{\bf x}_j)^2}{2!})+\frac{(2\gamma{\bf x}_i{\bf x}_j)^3}{3!}+\ldots) \\
+&=& \phi({\bf x}_i)^T\phi({\bf x}_j)\\
+where\quad \phi({\bf x}) &=& e^{-\gamma{\bf x}^2}[1,\sqrt{\frac{2\gamma}{1!}}{\bf x},\sqrt{\frac{(2\gamma)^2}{2!}}{\bf x}^2,\sqrt{\frac{(2\gamma)^3}{3!}}{\bf x}^3,\ldots]^T
+\end{eqnarray*}
 \subsection*{SVM after kernel}
 Optimization:
 \begin{eqnarray*}

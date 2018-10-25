@@ -222,6 +222,12 @@ p(h_{1:t},v_{1:T}) = p(v_1|h_1)p(h_1)\prod_{t=2}^{T}p(v_t|h_t)p(h_t|h_{t-1})
 $$
 where $p(h_t|h_{t-1})$ and $p(v_t|h_t)$ are constant through time.
 
+\section*{Inference}
+Inference corresponds to using the distribution to answer question about environment.
+\subsection*{Computational Efficiency}
+Inference can be computationally very expensive and we wish to characterize situation in which inferences can be computed efficiently.\\
+For \textbf{singly-connected} graphical models, and certain inference questions, there (usually) exist \textbf{efficient algorithms} based on the concept of \textbf{message passing}.\\
+In general, the case of \textbf{multiply-connected} models is computationally \textbf{inefficient}.
 \end{document}
 
 
