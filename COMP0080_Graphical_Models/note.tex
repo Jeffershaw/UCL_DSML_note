@@ -228,6 +228,48 @@ Inference corresponds to using the distribution to answer question about environ
 Inference can be computationally very expensive and we wish to characterize situation in which inferences can be computed efficiently.\\
 For \textbf{singly-connected} graphical models, and certain inference questions, there (usually) exist \textbf{efficient algorithms} based on the concept of \textbf{message passing}.\\
 In general, the case of \textbf{multiply-connected} models is computationally \textbf{inefficient}.
+\subsection*{Sum-Product algorithm}
+Both Markov and belief networks can be represented using factor graphs (convenient to derive a marginal inference).\\
+This termed the sum-product algorithm since to compute marginals we need to distribute the \textbf{sum over variable states over} the \textbf{product of factors}. This also refereed to as belief propagation.
+\large{Message Passing for multiply-connected graph}
+Using cut-set conditioning.
+\section*{HMM}
+\subsection*{Forward algorithm}
+$A$ matrix ($p(h_t=j|h_{t-1}=i)=A_{ji}$)is the transition matrix, $B$ matrix($p(v_t=j|h_t=i)=B_{ji}$) is the emission matrix, $\pi=(\pi_i)$ is the initial state distribution. The hidden Markov model could be defined as $\lambda=(A,B,\pi)$.
+\begin{eqnarray*}
+\alpha_t(i) &=& P(0_1,o_2,\ldots,o_t,i_t=q_i|\lambda) \\
+&=& [\sum_{j=1}^{N}\alpha_{t-1}(j)a_{ji}]b_i(o_{t+1}) \\
+P(O|\lambda) &=& \sum_{i=1}^{N}\alpha_{T}(i)
+\end{eqnarray*}
+\subsection*{Backward algorithm}
+\begin{eqnarray*}
+\beta_t(i) &=& P(o_{t+1},o_{t+2},\ldots,o_T|i_t=q_i,\lambda)\\
+ &=& \sum_{j=1}^{N}a_{ij}b_j(o_{t+1})\beta_{t+1}(j)\\
+ P(O|\lambda) &=& \sum_{i=1}^{N}\pi_ib_i(o_1)\beta_1(i)
+\end{eqnarray*}
+Here, define $\gamma_t(i)=P(i_t=q_i|O,\lambda)\propto \alpha_t(i)\beta_t(i)$
+
+\subsubsection*{Baum-Welch algorithm}
+\subsubsection*{Viterbi algorithm}
+\section{Conditional Random Field}
+\section{Markov Random Field}
+\section{Vision}
+$$
+E({\bf x}) = \sum_{i\in V}\psi_i(x_i)+\sum_{i\in V,j\in N_i}\psi_{ij}(x_i,x_j)
+$$
+For the Data term:
+\begin{eqnarray*}
+\psi_i(x_i=0) = -\log(p(x_i\notin FG))\\
+\psi_i(x_i=1) = -\log(p(x_i\in FG))
+\end{eqnarray*}
+For the Smoothness term:
+\begin{eqnarray*}
+\psi_ij(x_i,x_j)&=&K_{ij}\delta(x_i\neq x_j)\\
+where K_{ij}&=&\lambda_1+\lambda_2\exp(-\beta(I_i-I_j)^2)
+\end{eqnarray*}
+\subsection*{Max-Flow Problem}
+Ford\&Fulkerson algorithm
+Min-cut:$\min_{S,T}\sum_{i\in S,j\in T}c_{ij}$
 \end{document}
 
 
