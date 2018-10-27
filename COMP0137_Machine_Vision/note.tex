@@ -301,7 +301,70 @@ compared to MoG, it is more robustness.
 not willing to write, seems not important\\
 compared to MoG, it is applied when dimension is larger than sample. Or the covariance cannot be invertible.
 \section*{Regression}
-\subsection*{Bayesian Solution}
+\subsection*{Linear Regression}
+The core idea is to regard the error as the normal distribution.
+$$
+Pr({\bf w}|{\bf X,\theta}) = {\rm Norm}_{\bf w}[{\bf X}^T\phi,\sigma^2{\bf I}]
+$$
+Use the maximum likelihood to calculate, then take the derivative, set result to 0 and re-arrange:
+\begin{eqnarray*}
+\hat \phi &=& ({\bf XX}^T)^{-1}{\bf X}{\bf w}\\
+\hat \sigma^2 &=& \frac{({\bf w}-{\bf X}^T\phi)^T({\bf w-{\bf X}^T\phi})}{\bf I}
+\end{eqnarray*}
+\subsection*{Linear Regression in Bayesian}
+Besides max likelihood, the bayesian model could be applied:
+Likelihood:
+$$
+Pr({\bf w}|{\bf X,\theta}) = {\rm Norm}_{\bf w}[{\bf X}^T\phi,\sigma^2{\bf I}]
+$$
+Prior:
+$$
+Pr(\phi) = {\rm Norm}_\phi[0,\sigma_p^2{\bf I}]
+$$
+Bayes rules:
+$$
+Pr(\phi|{\bf X,w}) = \frac{Pr({\bf w|X,\phi})Pr(\phi|{\bf X})}{Pr({\bf w|X})}
+$$
+In that case, it could be concluded as follow:
+$$
+Pr(\phi|{\bf X,w}) ={\rm Norm}_{\phi}[\frac{1}{\sigma^2}{\bf A}^{-1}{\bf Xw},{\bf A}^{-1}] 
+$$
+Where ${\bf A}=\frac{1}{\sigma^2}{\bf XX}^T+\frac{1}{\sigma_p^2}{\bf I}$.\\
+Inference could be calculated as following:
+\begin{eqnarray*}
+Pr(w^*|{\bf x}^*,{\bf X,w}) &=& \int Pr(w^*|{\bf x}^*,\phi)Pr(\phi|{\bf X,w})d\phi\\
+ &=& {\rm Norm}_{w^*}[\frac{1}{\sigma^2}{{\bf x}^*}^T{\bf A^{-1}Xw},{\bf x^*}^T{\bf A^{-1}x^*}+\sigma^2]
+\end{eqnarray*}
+where $\bf A^{-1}$ is hard to calculated when the dimension is large, then directly calculate the $\bf A^{-1}$.\\
+For the variance fitting, using a marginal distribution to calculate the maximum likelihood:
+$$
+Pr({\bf w|X,\sigma^2}) = \int Pr({\bf w|X,\phi,\sigma^2})Pr(\phi)d\phi = {\rm Norm}_{\bf w}[0,\sigma_p^2{\bf X}^T{\bf X+\sigma^2I}]
+$$
+\subsection*{Gaussian Process Regression}
+$$
+Pr(w_i|{\bf x}_i,\theta) = {\rm Norm}_{w_i}[\phi^T{\bf z}_i,\sigma^2]
+$$
+The difference between non-linear regression is using ${\bf z}_i$ to substitute $\bf x_i$. The other steps are similar.
+\subsection*{Kernel regression}
+substitute $\bf Z_i^TZ_i$ as a kernel ${\bf K[X,X]}$. The advantage is that not waste time on calculating the high dimension $\bf z$. The specific example could refer to the Gaussian kernel, the $\bf z$ of Gaussian kernel is infinite dimension. As a kernel, it is calculated fast.
+\subsection*{Sparse Linear regression}
+Perhaps not every dimension of the data $\bf x$ is informative
+A sparse solution forces some of the coefficients in $\phi$ to be zero.
+The difference between Sparse linear regression and linear regression, here, we applied the t-distribution as the prior as the distribution of $\phi$.\\
+The basic idea for this regression is that, t-distribution has a better robustness in data point selection. Then after applying t-distribution as the $\phi$ distribution, in the fitting phase, fitted $\phi$ has sparse property. 
+\begin{eqnarray*}
+Pr(\phi) &=& \prod_{D}^{d=1}{\rm Stud}_{\phi_d}[0,1,\nu]\\
+ &=& \prod_{d=1}^{D}\frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{\phi^2_d}{\nu})^{-(\nu+1)/2}
+\end{eqnarray*}
+For every single t-distribution, it could be regarded as a mixture of Gaussian distribution. Therefore, it could be expressed as follow (hidden variable):
+\begin{eqnarray*}
+Pr(\phi) &=& \prod_{d=1}^{D}\int {\rm Norm}_{\phi_d}[0,1/h_d]{\rm Gam}_{h_d}[\nu/2,\nu/2]dh_d \\
+&=& \int {\rm Norm}_{\phi_d}[0,{\bf H}^{-1}]\prod_{d=1}^{D}{\rm Gam}_{h_d}[\nu/2,\nu/2]d{\bf H}
+\end{eqnarray*}
+Then, according to bayesian:
+$$
+Pr({\bf w|X,\sigma^2}) \approx \max_{\bf H}[{\rm Norm}_{\bf w}[0,{\bf X^TH^{-1}X+\sigma^2I}]\prod_{d=1}^{D}{\rm Gam}_{h_d}[\nu/2,\nu/2]]
+$$
 
 \end{document}
 
