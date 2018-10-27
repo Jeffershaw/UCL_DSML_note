@@ -365,7 +365,31 @@ Then, according to bayesian:
 $$
 Pr({\bf w|X,\sigma^2}) \approx \max_{\bf H}[{\rm Norm}_{\bf w}[0,{\bf X^TH^{-1}X+\sigma^2I}]\prod_{d=1}^{D}{\rm Gam}_{h_d}[\nu/2,\nu/2]]
 $$
-
+The specific result could refer to ppt08 page 44.\\
+However, it is hard to handle high dimension.
+\subsection*{Dual Linear Regression}
+This model could be regarded as SVM regression in bayesian framework.\\
+In linear SVR, the regressor is:
+$$
+y = \sum_{i=1}^{N}(a_i-a_i^*)<x_i,x>+b
+$$ 
+where $a_i$ is the upper bound penalty factor Lagrange multiplier, and $a_i^*$ is lower penalty factor Lagrange multiplier. Then $(a_i-a_i^*)$ could be regarded as a new coefficient. Then introduce the dual linear regression. The specific SVR tutorial URL could be found in http://kernelsvm.tripod.com/.
+The idea is that $\phi$ could be represented as
+$$
+\phi = {\bf X\psi} =  \sum_{i=1}^{N}(a_i-a_i^*)x_i
+$$ 
+Then dual linear regression could be represented as :
+$$
+Pr({\bf w|X,\theta}) = {\rm Norm}_{\bf w}[{\bf X}^T{\bf X\psi},\sigma^2{\bf I}]
+$$
+The fitting and inferencing are the same as linear regression above.
+\subsection*{Relevance Vector Machine}
+The idea is to combine dual regression and sparsity.
+$$
+Pr({\bf w|X,\theta}) = {\rm Norm}_{\bf w}[{\bf X^TX\psi},\sigma^2{\bf I}] 
+$$$$
+Pr(\psi) = \prod_{i=1}^{I}{\rm Stud}_{\psi_i}[0,1,\nu]
+$$
 \end{document}
 
 
