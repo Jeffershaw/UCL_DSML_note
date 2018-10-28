@@ -433,7 +433,36 @@ Gini(p) &=& \sum_{k=1}^{K}p_k(1-p_k)=1-\sum_{k=1}^{K}p_k^2\\
 Gini(D,A) &=& \frac{|D_1|}{|D|}Gini(D_1)+\frac{|D_2|}{|D|}Gini(D_2）
 \end{eqnarray*}
 \section*{Ensemble learning}
-\textbf{Generate a group of base-learners} which has higher accuracy when \textbf{combined}.
+\textbf{Generate a group of base-learners} which has higher accuracy when \textbf{combined}.\\
+Consider the error, $\mathbb{E}_{COM} = \frac{1}{M}\mathbb{E}_{AV}$
+\subsection*{Bagging}
+pick subset of training data, then obtain weak learner.\\
+Output final classifier by majority voting of the weak learner.\\
+\subsection*{Boosting}
+Pick subset of training data using a sampling distribution, obtain weak learner(use weak learner to update sampling distribution).\\
+\subsubsection*{Adaboost}
+Defines a classifier using an additive model(weighted voting):
+$$
+F(x) = \alpha_1f_1(x)+\alpha_2f_2(x)+\alpha_3f_3(x)+\ldots
+$$
+Given: $(x^i,y^i),x^i\in X, y^i\in{-1,1},i=1,\ldots,N$\\
+Initialize: $D_1(i)=\frac{1}{N}$ distribution on the sample\\
+For $t=1\ldots T$:\\
+\ -Find classifier $h_t:X\rightarrow {-1,1} with smallest weighted error$\\
+$$
+\epsilon = \frac{\sum_{i=1}^{N}D_t^i[y^i\neq_t(x^i)]}{\sum_{i}{D_t^i}}
+$$
+\ -Update distribution: 
+\begin{eqnarray*}
+D_{t+1}^i &=& \frac{D_t^i}{Z_t}\times \{\begin{matrix}
+\exp(-\alpha_t), {\rm if} \quad y^i = h_t(x^i)\\
+\exp(\alpha_t), {\rm if} \quad y^i \neq h_t(x^i)
+\end{matrix} \\
+ &=& \frac{D_t^i}{Z_t}\exp(-\alpha_ty^ih_t(x^i)) \\
+a_t &=& \frac{1}{2}\log\frac{1-\epsilon_t}{\epsilon}\\
+Z_t &=& \sum_i D^i_t\exp(-\alpha_ty^ih_t(x^i))\\
+{\rm Final\  classifier :} {\bf H}(x) &=&{\rm sign}(\sum_{t}\alpha_th_t(x)) 
+\end{eqnarray*}
 \end{document}
 
 
