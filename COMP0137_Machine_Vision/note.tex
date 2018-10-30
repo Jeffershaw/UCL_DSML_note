@@ -390,6 +390,37 @@ Pr({\bf w|X,\theta}) = {\rm Norm}_{\bf w}[{\bf X^TX\psi},\sigma^2{\bf I}]
 $$$$
 Pr(\psi) = \prod_{i=1}^{I}{\rm Stud}_{\psi_i}[0,1,\nu]
 $$
+\section*{Classification}
+\subsection*{Logistic Regression}
+$$
+Pr(w|\phi_0,\phi,{\bf x}) = {\rm Bern}_w[\sigma(\phi^T{\bf x})]
+$$
+If use the maximum likelihood to learning, the gradient would be 
+$$
+\frac{\partial L}{\partial \phi} = -\sum_{i=1}^{I}(\frac{1}{1+\exp[-\phi^T{\bf x}_i]}-w_i){\bf x}_i=-\sum_{i=1}^{I}({\rm sig}[a_i]-w_i){\bf x}_i
+$$
+we cannot get the expression for $\phi$ in term of $x$ and $w$.
+Therefore, the goal is to optimize that
+$$
+\hat \theta = {\rm argmin}_\theta[f[\theta]]
+$$
+If a function is \large{convex}, then it has only a single minimum.\\
+\subsubsection*{Gradient Based Optimization}
+1. Choose a search direction $\bf s$ based on the local properties of the function. \\
+2. Perform an intensive search along the chosen direction. This is called line search:
+$$
+\hat \lambda = {\rm argmin}_{\lambda}[f[\theta^{[t]}+\lambda{\bf s}]]
+$$
+Then set
+$$
+\theta^{[t+1]} = \theta^{[t]}+\hat \lambda{\bf s}
+$$
+In order to solve the not compute gradient problem, there is the solution that:
+$$
+\frac{\partial f}{\partial\theta_j} \approx \frac{f[\theta+a{\bf e}_j]-f[\theta]}{a}
+$$
+where $\bf e_j$ is the unit vector in the $j^{th}$ direction.
+\subsubsection*{Newton's method}
 \end{document}
 
 

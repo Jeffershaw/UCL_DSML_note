@@ -244,8 +244,13 @@ After substituting the result, it could be concluded that
 \hat \beta_0 &=& \bar y-\hat \beta_1\bar x\\
 {\rm where} \\
 C_{xx} &=& \sum_{i=1}^{n}(x_i-\bar x)^2 = (\sum_{i=1}^{n}x_i^2)-n\bar x^2\\
-{\rm and}\quad C_{xy} &=& \sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)=(\sum_{i=1}^{n}x_iy_i)-n\bar x\bar y`'
+{\rm and}\quad C_{xy} &=& \sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)=(\sum_{i=1}^{n}x_iy_i)-n\bar x\bar y\\
+RSS &=& C_{yy}-\frac{C_{xy}^2}{C_{xx}}
 \end{eqnarray*}
+\subsection*{Error}
+If $x_i=x_j$, usually $y_i\neq y_j$. Therefore treat $y_i$ as realized value of random variable $Y_i$, whose distribution depends on $x_i$.\\
+The model would be: $Y_i = \beta_0+\beta_1x_i+\epsilon_i$ where $\epsilon_i$ are independent random variables with $E(\epsilon)=0, Var(\epsilon)=\sigma^2$
+
 \end{document}
 
 
