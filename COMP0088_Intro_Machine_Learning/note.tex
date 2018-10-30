@@ -463,6 +463,13 @@ a_t &=& \frac{1}{2}\log\frac{1-\epsilon_t}{\epsilon}\\
 Z_t &=& \sum_i D^i_t\exp(-\alpha_ty^ih_t(x^i))\\
 {\rm Final\  classifier :} {\bf H}(x) &=&{\rm sign}(\sum_{t}\alpha_th_t(x)) 
 \end{eqnarray*}
+\large{Posterior}
+\begin{eqnarray*}
+\frac{\partial}{\partial f({\bf x})} \mathbb{E}[e^{-\tilde{y}f({\bf x})}|{\bf x}]&=& \frac{\partial}{\partial f({\bf x})}[p(\tilde{y}=1|{\bf x})e^{-f({\bf x})}+p(\tilde y=-1|{\bf x})e^{f({\bf x})}] \\
+&=& -p(\tilde{y}=1|{\bf x})e^{-f({\bf x})}+p(\tilde{y}=-1|{\bf x})e^{f({\bf x})} \\
+&=& 0 \Rightarrow \frac{p(\tilde{y}=1|{\bf x})}{p(\tilde{y}=-1|{\bf x})} =e^{2f({\bf x})}\\
+f(x) &=& \frac{1}{2}\log(\frac{P(y=1|x)}{P(y=-1|x)})\\
+\end{eqnarray*}
 \end{document}
 
 

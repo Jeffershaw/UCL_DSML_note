@@ -234,7 +234,18 @@ b(\hat \theta_n) &=& \hat \theta-H^{-1}(\alpha/2)\\
 \end{eqnarray*}
 \section*{Linear Regression}
 Data points satisfies: $y_i=\beta_0+\beta_1x_i+e_i(i=1,\ldots,n)$\\
-Next, we are trying to find $\bar y-\hat \beta_0-\hat\beta_1\bar x=0$
+Next, we are trying to find $\bar y-\hat \beta_0-\hat\beta_1\bar x=0$ and $\sum_{i=1}^{n}x_i(y_i-\hat \beta_0-\hat \beta_1x_i)=0$
+The sum of squared prediction errors:$RSS= \sum_{i=1}^{n}(y_i-\beta_0-\beta_1x_i)^2$ \\
+Then take the derivative of parameter $\hat \beta_0$ and $\hat \beta_1$ as 0, and get the result.\\
+After substituting the result, it could be concluded that 
+\begin{eqnarray*}
+\hat \beta_1 &=& [\sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)]/[\sum_{i=1}^{n}(x_i-\bar x)^2] \\
+\hat \beta_1 &=& \frac{C_{xy}}{C_{xx}} \\
+\hat \beta_0 &=& \bar y-\hat \beta_1\bar x\\
+{\rm where} \\
+C_{xx} &=& \sum_{i=1}^{n}(x_i-\bar x)^2 = (\sum_{i=1}^{n}x_i^2)-n\bar x^2\\
+{\rm and}\quad C_{xy} &=& \sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)=(\sum_{i=1}^{n}x_iy_i)-n\bar x\bar y`'
+\end{eqnarray*}
 \end{document}
 
 
