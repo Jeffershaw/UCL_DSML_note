@@ -413,9 +413,11 @@ Compare with general $f({\bf x}) = \sum_kw_k\phi_k({\bf x})$
 
 \section*{Tree(not in lecture)}
 \subsection*{Decision tree}
+The information content of an outcome $x$ is $h(x) = \log_2\frac{1}{P(x)}$\\
 Entropy measures the uncertain of the random variable $X$\\
 Here the distribution of $X$ is $P(X=x_i)=p_i, i=1,2,\ldots,n$ \\
 Entropy of $X$: $H(X) = -\sum_{i=1}^{n}p_i\log p_i$ \\
+The continuous entropy would be $H(p)=-\int_xp(x)\log(p(x))dx$\\
 Conditional Entropy: $H(Y|X)=\sum_{i=1}^{n}p_iH(Y|X=x_i)$ \\
 Information Gain is the difference between empirical entropy and empirical conditional entropy.
 $g(D,A) = H(D)-H(D|A)$\\
@@ -470,6 +472,14 @@ Z_t &=& \sum_i D^i_t\exp(-\alpha_ty^ih_t(x^i))\\
 &=& 0 \Rightarrow \frac{p(\tilde{y}=1|{\bf x})}{p(\tilde{y}=-1|{\bf x})} =e^{2f({\bf x})}\\
 f(x) &=& \frac{1}{2}\log(\frac{P(y=1|x)}{P(y=-1|x)})\\
 \end{eqnarray*}
+\subsection*{boundary}
+The boundary of the error would be 
+\begin{eqnarray*}
+&\frac{1}{N}\sum_{N}^{i=1}I(G(x_i)\neq y_i)\le\frac{1}{N}\sum_{i}\exp(-y_if(x_i))=\prod_{m}Z_m \\&= \prod_{m=1}^{M}[2\sqrt{e_m(1-e_m)}] = \prod_{m=1}^{M}\sqrt{(1-4\gamma_m^2)} \le \exp(-2\sum_{m=1}^{M}\gamma_m^2) \\
+&{\rm where} \quad r_m = \frac{1}{2}-e_m
+\end{eqnarray*}
+Then it could be proved that the error is decreasing in exponential.
+\section*{}
 \end{document}
 
 
