@@ -124,7 +124,11 @@ A graph is multiply-connected if it is not singly connected.\\
 
 \subsection*{Belief Networks (Bayesian Networks)}
 A belief network is a \textbf{directed acyclic graph} in which each node is associated with the conditional probability of the node given its parents.\\
-Belief networks are a convenient framework for representing such independence assumptions. 
+Belief networks are a convenient framework for representing such independence assumptions. \\
+A belief network is a distribution of the form
+$$
+p(x_1,\ldots,x_D) = \prod_{i=1}^{D}p(x_i|pa(x_i))
+$$
 \subsubsection*{Processing the network}
 Firstly write the whole joint distribution such as:
 $$

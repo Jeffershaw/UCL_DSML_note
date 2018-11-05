@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  27 OCT 2018 21:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  5 NOV 2018 00:42
 entering extended mode
 **./note.tex
 (note.tex
@@ -317,13 +317,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--124
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 134.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 139.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 139.
  [3]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -338,12 +338,12 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--152
+Underfull \hbox (badness 10000) in paragraph at lines 151--157
 
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 202--205
+Underfull \hbox (badness 10000) in paragraph at lines 207--210
 
  []
 
@@ -351,7 +351,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--205
 Here is how much of TeX's memory you used:
  3560 strings out of 493323
  46832 string characters out of 3139069
- 119399 words of memory out of 3000000
+ 119390 words of memory out of 3000000
  7036 multiletter control sequences out of 15000+200000
  22877 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -371,7 +371,7 @@ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmr8a.pfb>
-Output written on note.pdf (9 pages, 180802 bytes).
+Output written on note.pdf (9 pages, 180856 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
