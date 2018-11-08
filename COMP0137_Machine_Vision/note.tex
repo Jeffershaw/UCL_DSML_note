@@ -15,6 +15,10 @@
 \usepackage{geometry}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{tikz}
+% Optional PGF libraries
+\usepackage{pgflibraryarrows}
+\usepackage{pgflibrarysnakes}
 %\usepackage{CJKutf8}
 % Use times if you have the font installed; otherwise, comment out the
 % following line.
@@ -421,6 +425,40 @@ $$
 $$
 where $\bf e_j$ is the unit vector in the $j^{th}$ direction.
 \subsubsection*{Newton's method}
+${\boldsymbol \theta}^{[t+1]} = {\boldsymbol \theta}^{[t]}-\lambda(\frac{\partial^2f}{\partial{\boldsymbol \theta}^2})^{-1}\frac{\partial f}{\partial {\boldsymbol \theta}}$\\
+\subsubsection*{Line Search}
+It is the similar to Golden-section search. Choose a range, and split it into 3 range(a,b,c,d). $a,d = f(b)>f(c)?b,d:a,c$
+\subsection*{Bayesian Logistic Regression}
+$$
+Pr(\phi|{\bf X,w}) =  \frac{Pr({\bf w|X},\phi)Pr(\phi)}{Pr({\bf w|X})}
+$$
+where $Pr(\phi) = {\rm Norm_{\phi}[0,\sigma_p^2{\bf I}]}$.
+\subsubsection*{Laplace Approximation}
+Set mean to MAP estimate \\
+Set covariance to match that at MAP estimate.\\
+$$
+Pr(\phi|{\bf X,w}) \approx q(\phi) = {\rm Norm}_\phi[{\boldsymbol \mu, \Sigma}]
+$$
+where ${\boldsymbol \mu} = \hat\phi$ and $\boldsymbol \Sigma = -\left(\frac{\partial^2L}{\partial\phi^2}\right)^{-1}|_{\phi=\hat \phi}$\\
+\subsubsection*{Inference}
+\begin{eqnarray*}
+Pr(w^*|{\bf x^*, X,w}) &=& \int Pr(w^*|{\bf x^*,\phi})Pr(\phi|{\bf X,w})d\phi\\
+&\approx& \int Pr(w^*|{\bf x^*,\phi})q(\phi)d\phi \\
+Pr(w^*|{\bf x^*,X,w}) &\approx& \int Pr(w^*|a)Pr(a)da\\
+&\approx& \frac{1}{1+\exp[-\mu_a/\sqrt{1+\pi\sigma^2_a/8}]}\\
+Pr(a) = Pr(\phi^T{\bf x}^*) &=& {\rm Norm} _a[{\bold u}^T{\bold x^*},{\bf x}^{*T}{\boldsymbol \Sigma}{\bf x}]\\
+&=& {\rm Norm}_a[\mu_a,\sigma_a^2]
+\end{eqnarray*}
+\subsection*{Non-linear logistic regression}
+Apply non-linear transformation:
+$$
+\bf z = f[x]
+$$
+Build model as usual
+$$
+Pr(w=1|{\bf x},\phi) = {\rm Bern}_w[{\rm sig}[\phi^T{\bf z}]]
+$$
+
 \end{document}
 
 
