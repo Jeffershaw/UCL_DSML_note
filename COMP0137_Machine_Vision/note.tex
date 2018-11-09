@@ -458,7 +458,32 @@ Build model as usual
 $$
 Pr(w=1|{\bf x},\phi) = {\rm Bern}_w[{\rm sig}[\phi^T{\bf z}]]
 $$
-
+\subsection*{Gaussian process classification}
+Combine Bayesian logistic regression and non-linear logistic regression in dual form.\\
+The likelihood is:
+$$
+Pr({\bf w|X,\psi}) = \prod_{i=1}^{I} Bern_{w_i}[{\rm sig}[a_i]] = \prod_{i=1}^{I}Bern_{w_i}[{\rm sig}[\psi^T{\bf X}^Tx_i]]
+$$
+\subsection*{Relevance vector classification}
+It is the same as regression model that use t-distribution as priori of dual form coefficient.
+\subsection*{Incremental fitting}
+In the previous models, we wrote as following:
+$$
+a_i = \phi^T{\bf z}_i = \phi^T{\bf f[x]}_i
+$$
+Now write:
+$$
+a_i = \phi_0+\sum_{k=1}^{K}\phi_kf[{\bf x}_i,\xi_k]
+$$
+The derivate would be 
+$$
+\frac{\partial L}{\partial \theta} = -\sum_{i=1}^{I}(w_i-{\rm sig}[a_i])\frac{\partial a_i}{\partial \theta}
+$$
+\subsection*{Branching logistic regression}
+$$
+a_i = (1-g[{\bf x}_i,{\boldsymbol w}])\phi^T_0{\bf x}_i+g[{\bf x}_i,{\boldsymbol w}]\phi_1^T{\bf x}_i
+$$
+where $g[*,*]$ is a gating function.
 \end{document}
 
 
