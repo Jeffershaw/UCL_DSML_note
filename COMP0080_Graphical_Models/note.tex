@@ -258,6 +258,11 @@ Here, define $\gamma_t(i)=P(i_t=q_i|O,\lambda)\propto \alpha_t(i)\beta_t(i)$
 \subsubsection*{Viterbi algorithm}
 \section{Conditional Random Field}
 \section{Markov Random Field}
+A MRF is de ned by a set of distributions $p(x_i|ne(x_i))$ where $i\in{1,\ldots,n}$ indexes the distributions and $ne (x_i)$ are the neighbours of variable $x_i$, namely that subset of the variables $x1,\ldots,xn$ that the distribution of variable $x_i$ depends on. The term Markov indicates that this is a proper subset of the variables. A distribution is an MRF with respect to an undirected graph G if 
+$$
+p(x_i|x_{/i} ) = p(x_i|ne(x_i))
+$$ 
+where $ne(x_i)$ are the neighbouring variables of variable $x_i$, according to the undirected graph G. The notation $x_{/i}$ is shorthand for the set of all variables X excluding variable $x_i$, namely $X/x_i$ in set notation. 
 \section{Vision}
 $$
 E({\bf x}) = \sum_{i\in V}\psi_i(x_i)+\sum_{i\in V,j\in N_i}\psi_{ij}(x_i,x_j)

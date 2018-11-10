@@ -483,7 +483,12 @@ $$
 $$
 a_i = (1-g[{\bf x}_i,{\boldsymbol w}])\phi^T_0{\bf x}_i+g[{\bf x}_i,{\boldsymbol w}]\phi_1^T{\bf x}_i
 $$
-where $g[*,*]$ is a gating function.
+where $g[*,*]$ is a gating function returning number between 0 and 1.
+\subsection*{Haar classifier}
+1. Using haar-like do the feature extraction. \\
+2. Using integral image to speed up.\\
+3. Using Adaboost algorithm to train strong classifier\\
+4. Using cascading to connect the strong classifier.
 \end{document}
 
 
