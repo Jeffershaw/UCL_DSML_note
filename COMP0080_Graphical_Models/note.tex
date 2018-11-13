@@ -184,8 +184,20 @@ p(x_1,\ldots,x_9)=\frac{1}{Z}\prod_{i\sim j}\phi_{ij}(x_i,x_j)\\
 \subsection*{Rule for independence in Markov Networks}
 Remove all links neighboring the variables in the conditioning set $Z$.\\
 If there is no path from any member of $x$ to any member of $y$,then $x$ and $y$ are conditionally independent given $z$.
+\subsection*{Chain Graphical Model}
+Chain Graphs (CGs) contain both directed and undirected links. To develop the intuition.
+The only terms that we can unambiguously specify from this depiction are $p(a)$ and $p(b)$ since there is no
+mixed interaction of directed and undirected edges at the a and b vertices. 
 \subsection*{Factor Graphs}
 A square node represents a factor (non negative function) of its neighboring variables. FGs are most commonly used for inference.
+$$
+f(x_1,\ldots,x_n) = \prod_{i}\psi_i(x_i)
+$$
+When used to represent a distribution
+$$
+p(x_1,\ldots,x_n) = \frac{1}{Z}\prod_{i}\psi_i(x_i)
+$$
+For a factor $\psi{i}(X_i)$ which is a conditional distribution $p(x_i|pa(x_i))$.
 \section*{Markov Models}
 \subsubsection*{Time-Series}
 A time-series is an ordered sequence:
@@ -280,6 +292,34 @@ where K_{ij}&=&\lambda_1+\lambda_2\exp(-\beta(I_i-I_j)^2)
 \subsection*{Max-Flow Problem}
 Ford\&Fulkerson algorithm
 Min-cut:$\min_{S,T}\sum_{i\in S,j\in T}c_{ij}$
+\section*{Efficient Inference in Trees}
+\subsection*{Message passing (belief propagation.)}
+\subsection*{variable elimination}
+Each time sum over the states of a variable we eliminate it from the distribution.\\
+The message pass could be regarded as message passing.\\
+In general, one may view variable elimination as the passing of messages in the form of potentials from nodes to their neighbors. For belief networks variable elimination passes messages that are distributions when following the direction of the edge, and non normalized potentials when passing messages against the direction of the edge\\
+\subsection*{Junction Tree Algorithm}
+\subsubsection*{Clique Graphs}
+A clique graph consists of a set of potentials, $\phi_1(x^1),\ldots,\phi_n(x^n)$ each defined on a set of variables $x^i$. For neighboring cliques on the graph, defined on sets of variables $x^i$ and $x^j$, the intersection $x^s = x^i \cap x^j$ is called the separator and has a corresponding potential $\phi_s(x^s)$. A clique graph represents the function.
+$$
+\frac{\prod_{c}\phi_c(x^c)}{\prod_s\phi_s(x^s)}
+$$
+\subsubsection*{absorption}
+Let $v$ and $w$ be neighbors in a clique graph, let $S$ be their separator, and let $\phi(V),\phi(W)$ and $\phi(S)$ be their potentials. Absorption from $V$ to $W$ through $S$ replaces the tables $\phi(S)$ and $\phi(W)$ with
+$$
+\phi^*(S) = \sum_{v/S} \phi(V)
+$$  
+$$
+\phi^*(W) = \phi(W) \frac{\phi^*(S)}{\phi(S)}
+$$
+Then we say that clique $W$ absorbs information from clique $V$.
+\subsection*{Absorption Schedule}
+A clique can send a message to a neighbor, provided it has already received messages from all other neighbors.
+\subsection*{Junction Trees}
+A clique tree is a junction tree if, for each pair of nodes, $V$ and $W$, all nodes on the path between $V$ and $W$ contain the intersection $V \cap W$. This is also called the running intersection
+property.
+\subsection*{Moralisation}
+For each variable x add an undirected link between all parents of x and replace the directed link to x from its parents by undirected links. This creates a `moralised`Markov network.
 \end{document}
 
 
