@@ -250,7 +250,44 @@ RSS &=& C_{yy}-\frac{C_{xy}^2}{C_{xx}}
 \subsection*{Error}
 If $x_i=x_j$, usually $y_i\neq y_j$. Therefore treat $y_i$ as realized value of random variable $Y_i$, whose distribution depends on $x_i$.\\
 The model would be: $Y_i = \beta_0+\beta_1x_i+\epsilon_i$ where $\epsilon_i$ are independent random variables with $E(\epsilon)=0, Var(\epsilon)=\sigma^2$
-
+\section*{lecture 4}
+\subsection*{Dispersion}
+Dispersion is a broad concept relating to the variability in a distribution.
+\subsection*{Logistic Regression}
+\subsubsection*{Linear Regression}
+\begin{eqnarray*}
+\mathbb{E}[Y_i|\eta_i] = \mu_i=\eta_i \\
+Y_i|\eta_i \sim N(\eta_i,\sigma^2) \\
+Y_i \in \mathbb{R} \\
+\end{eqnarray*}
+\subsubsection*{Logistic Regression}
+\begin{eqnarray*}
+\mathbb{E}[Y_i|\eta_i] = \mu_i=\theta_i = g^{-1}(\eta_i) \\
+Y_i|\eta_i \sim Bernoulli(g^{-1}(\eta_i))\\
+\eta_i \in \mathbb{R}, \theta_i\in[0,1] \\
+\end{eqnarray*}
+The link function $g^{-1}(\eta_i)$ would be a logistic function
+$$
+\mu_i = g^{-1}(\eta_i)=logistic(\eta_i) = \frac{1}{1+\exp(-\eta_i)}
+$$
+$$
+\eta_i = g(\mu_i) = logit(\mu_i) = \log (\frac{\mu_i}{1-\mu_i}) = \log(\frac{\mathbb{P}(Y_i=1|\eta_i)}{\mathbb{P}(Y_i=0|\eta_i)})
+$$
+Possible link function would be $g(\mu_i) = \Phi^{-1}(\mu_i)$, the inverse of the standard normal CDF, and the complimentary log-log function, $g(\mu_i) = \log(-\log(1-\mu_i))$. \\
+A similar concept for generalized linear models is called the deviance ($R^2$ was a measure of model fit for normal linear regression models) \\
+$$
+D(M_1,M_0) = 2 \log(\frac{L(\hat \beta^{(1)};x,y)}{L(\hat \beta^{(0)};x,y)}) = 2(I(\hat \beta^{(1)};x,y)- (\hat \beta^{(0)};x,y))
+$$
+Asymptotically, for $M_{p2}$ with $p2$ predictors nested within model $M_{P1}$ with $p_1 > p_2$ predictors:
+$$
+D(M_{p1},M_{p2}) \sim \chi^2_{p1-p2}
+$$
+\subsection*{Poisson regression}
+\begin{eqnarray*}
+\mathbb{E}[Y_i|\eta_i] = \mu_i=\eta_i \\
+Y_i|\eta_i \sim Poisson(g^{-1}(\eta_i))\\
+\eta_i \in \mathbb{R}, \theta_i\in[0,\infty] \\
+\end{eqnarray*}
 \end{document}
 
 
