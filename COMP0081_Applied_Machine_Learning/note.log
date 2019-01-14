@@ -1,7 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  24 OCT 2018 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  13 JAN 2019 09:19
 entering extended mode
-**./note.tex
-(note.tex
+**C:/Users/Jeff/Desktop/UCL_DSML_note/COMP0081_Applied_Machine_Learning/note.te
+x
+
+(C:/Users/Jeff/Desktop/UCL_DSML_note/COMP0081_Applied_Machine_Learning/note.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -185,8 +187,7 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
 \c@lastnote=\count105
-
-No file note.aux.
+ (note.aux (C1.aux))
 \openout1 = `note.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -202,6 +203,7 @@ LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 61.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -306,26 +308,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (note.aux) ) 
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+\openout2 = `C1.aux'.
+
+ (C1.tex) [2
+
+] (note.aux
+(C1.aux)) ) 
 Here is how much of TeX's memory you used:
- 3566 strings out of 493323
- 46987 string characters out of 3139069
- 116578 words of memory out of 3000000
- 7055 multiletter control sequences out of 15000+200000
- 13425 words of font info for 35 fonts, out of 3000000 for 9000
+ 3565 strings out of 493323
+ 47104 string characters out of 3139069
+ 115863 words of memory out of 3000000
+ 7046 multiletter control sequences out of 15000+200000
+ 11292 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,28p,238b,193s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program F
-iles/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/
-type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
-tmr8a.pfb>
-Output written on note.pdf (1 page, 20904 bytes).
+ 39i,6n,28p,306b,193s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program
+ Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+Output written on note.pdf (2 pages, 13012 bytes).
 PDF statistics:
- 15 PDF objects out of 1000 (max. 8388607)
+ 14 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

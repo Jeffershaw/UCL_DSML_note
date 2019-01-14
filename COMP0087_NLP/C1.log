@@ -1,0 +1,48 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.4.16)  13 JAN 2019 09:17
+entering extended mode
+**C:/Users/Jeff/Desktop/UCL_DSML_note/COMP0087_NLP/C1.tex
+(C:/Users/Jeff/Desktop/UCL_DSML_note/COMP0087_NLP/C1.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+! Undefined control sequence.
+l.1 \chapter
+            *{1.1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter*
+             {1.1}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 1 in font nullfont!
+)
+*
+! Emergency stop.
+<*> ...f/Desktop/UCL_DSML_note/COMP0087_NLP/C1.tex
+                                                  
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 493323
+ 209 string characters out of 3139069
+ 53648 words of memory out of 3000000
+ 3645 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 5i,0n,4p,73b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

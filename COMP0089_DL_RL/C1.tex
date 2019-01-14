@@ -1,0 +1,82 @@
+\chapter{RL}
+\section*{Core concepts}
+
+\begin{itemize}
+\item Environment
+\item Reward signal
+\item Agent
+	\begin{itemize}
+		\item Agent state
+		\item Policy
+		\item Value function
+		\item Model
+	\end{itemize}
+\end{itemize}
+
+\subsection*{Reward}
+A reward $R{t}$ is a scalar feedback signal \\
+The agent's job is to maximize cumulative reward
+$$
+G_t = R_{t+1}+R_{t+2}+R_{t+3}+\ldots
+$$
+\subsection*{Value}
+Expected cumulative reward, from a state $s$
+\begin{eqnarray*}
+v(s) &=& \mathbb{E}[G_t|S_t=s] \\
+&=& \mathbb{E}[R_{t+1}+R_{t+2}+R_{t+3}+\ldots|S_t=s]
+\end{eqnarray*}
+The actual value function is the Expected return:
+\begin{eqnarray*}
+v(s) &=& \mathbb{E}[G_t|S_t=s] \\
+&=& \mathbb{E}[R_{t+1}+\gamma R_{t+2}+\gamma^2R_{t+3}+\ldots|S_t=s]
+\end{eqnarray*}
+the discount factor $\gamma \in [0,1]$ trades off importance of immediate vs long-term rewards. \\
+That leads to Bellman equation
+\begin{eqnarray*}
+v(s) &=& \mathbb{E}[R_{t+1}+\gamma G_{t+1}|S_t=s,A_t\sim \pi(s)] \\
+&=& \mathbb{E}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_t=s,A_t\sim \pi(s)]
+\end{eqnarray*}
+
+\subsection*{Actions in sequential problems}
+Goal: select actions to maximize value \\
+A mapping from states to actions is called a Policy
+\begin{eqnarray*}
+q(s,a) &=& \mathbb{E}[G_t|S_t=s,A_t=a] \\
+&=& \mathbb{E}[R_{t+1}+R_{t+2}+R_{t+3}+\ldots|S_t=s,A_t=a]
+\end{eqnarray*}
+
+\subsection*{Agent State}
+The state including agent state and environment state\\
+A history is a sequence of observations, actions, rewards
+$$
+H_t = O_0,A_0,R_1,O_1,\ldots,O_{t-1},A_{t-1},R_t,O_t
+$$
+This history can be used to construct an agent state $S_{t}$
+
+\subsection*{Fully Observable Environments}
+Observation = environment state\\
+The agent state could just be this observation:\\
+$S_{t}$ = $O_{t}$=environment state \\
+Then the agent is in a Markov decision process:
+$$
+p(r,s|S_t,A_t) = p(r,s|H_t,A_t)
+$$
+``The future is independent of the past given the present''
+
+\subsection*{Partially Observable Environments}
+
+\subsection*{Policy}
+Defines the agent's behaviour\\
+Deterministic policy: $A=\pi(S)$\\
+Stochastic policy: $\pi(A|S)=p(A|S)$
+
+\subsection*{Model}
+A model predicts what the environment will do next\\
+E.g. P predicts the next state 
+$$
+P(s,a,s') = p(S_{t+1}=s'|S_t=s,A_t=a)
+$$
+R predicts the next reward
+$$
+R(s,a) = \mathbb{E}[R_{t+1}|S_t=s,A_t=a]
+$$

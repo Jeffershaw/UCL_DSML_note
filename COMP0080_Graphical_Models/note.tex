@@ -319,7 +319,14 @@ A clique can send a message to a neighbor, provided it has already received mess
 A clique tree is a junction tree if, for each pair of nodes, $V$ and $W$, all nodes on the path between $V$ and $W$ contain the intersection $V \cap W$. This is also called the running intersection
 property.
 \subsection*{Moralisation}
-For each variable x add an undirected link between all parents of x and replace the directed link to x from its parents by undirected links. This creates a `moralised`Markov network.
+For each variable x add an undirected link between all parents of x and replace the directed link to x from its parents by undirected links. This creates a `moralised` Markov network.
+\subsection*{Forming the clique graph}
+The clique graph is formed by identifying the cliques in the Markov network and adding a link between
+cliques that have a non-empty intersection. Add a separator between the intersecting cliques.
+\subsection*{Forming a junction tree from a clique graph}
+For a singly connected distribution, any maximal weight spanning tree of a clique graph is a junction tree
+\subsection*{Triangulated (Decomposable) Graph}
+An undirected graph is triangulated if every loop of length 4 or more has a chord. An equivalent term is that the graph is decomposable or chordal. From this definition, one may show that an undirected graph is triangulated if and only if its clique graph has a junction tree.
 \end{document}
 
 
