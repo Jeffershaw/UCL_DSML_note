@@ -489,6 +489,16 @@ where $g[*,*]$ is a gating function returning number between 0 and 1.
 2. Using integral image to speed up.\\
 3. Using Adaboost algorithm to train strong classifier\\
 4. Using cascading to connect the strong classifier.
+\section*{Chains and Trees}
+\subsection*{Hidden Markov model}
+$$
+Pr(x_{1\ldots N},w_{1\ldots N}) = \left(\prod_{n=1}^{N}Pr(x_n|w_n)\right)\left(\prod_{n=2}^{N}Pr(w_n|w_{n-1})\right)
+$$
+\subsection*{undirected model for chains}
+$$
+Pr(x_{1\ldots N},w_{1\ldots N}) = \frac{1}{Z}\left(\prod_{n=1}^{N}\phi(x_n|w_n)\right)\left(\prod_{n=2}^{N}\psi(w_n|w_{n-1})\right)
+$$
+
 \end{document}
 
 
